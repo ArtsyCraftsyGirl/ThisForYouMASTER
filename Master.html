@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master's Page</title>
+    <style>
+   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    background-image: url('soldier.jpg'); 
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    margin: 0; /* Remove default margin */
+    color: white; /* Change text color to white for better contrast */
+}
+
+
+h1 {
+    color: beige; /* Text color */
+    margin: 20px 0; /* Space above and below the title */
+    text-shadow: 
+        2px 2px 0 rgba(0, 0, 0, 0.7), /* Right shadow */
+        4px 4px 0 rgba(0, 0, 0, 0.7), /* Further right shadow */
+        6px 6px 0 rgba(0, 0, 0, 0.7), /* Even further right shadow */
+        8px 8px 0 rgba(0, 0, 0, 0.7); /* Furthest right shadow */
+    position: fixed; 
+    top: 10px; /* Distance from the top of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center the title */
+    font-size: 48px; /* Increase the font size (adjust as needed) */
+}
+        .content {
+            text-align: left; /* Align content to the left */
+            position: absolute; /* Position the content absolutely */
+            left: 20px; /* Distance from the left side of the viewport */
+            top: 100px; /* Distance from the top of the viewport */
+        }
+        .song {
+            margin-bottom: 20px; /* Space between songs */
+        }
+       
+button {
+    background-color: white; /* Default button color */
+    color: black; /* Text color */
+    border: 3px outset black; /* Border */
+    padding: 2px 3px; /* Padding for the button */
+    margin-right: 5px; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    border-radius: 5px;
+}
+
+
+
+button:active, /* Change color when button is clicked */
+button.active {
+    background-color: pink; /* Change background color to pink when active */
+    color: black; /* Keep text color black when active */
+}
+
+
+
+/* Animated text styles */
+.animated-text {
+    position: fixed; 
+    top: 10px; /* Distance from the top of the viewport */
+    left: 10px; /* Distance from the left side of the viewport */
+    background-color: black; /* Black background */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    color: #ff0000; /* Neon red color */
+    font-size: 24px; /* Font size */
+    animation: neon 1.5s ease-in-out infinite alternate; /* Animation */
+}
+
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff007f, 0 0 30px #ff007f, 0 0 40px #ff007f, 0 0 50px #ff007f;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff007f, 0 0 60px #ff007f, 0 0 70px #ff007f, 0 0 80px #ff007f;
+    }
+}
+
+
+
+.love-letter-message {
+    font-size: 24px; /* Font size for the message */
+    font-style: italic;
+    color: white; /* Text color */
+    margin-bottom: 0; /* Remove space between the message and the emoji */
+    position: fixed; /* Position the message absolutely */
+    top: 30px; /* Distance from the top of the viewport */
+    right: 50px; /* Distance from the right side of the viewport */
+}
+
+ 
+.love-letter {
+    position: fixed; /* Position the emoji absolutely */
+    top: 20px; /* Distance from the top of the viewport */
+    right: 20px; /* Distance from the right side of the viewport */
+    font-size: 100px; /* Adjust size */
+    text-align: center; /* Center the text */
+}
+
+.envelope {
+    position: relative;
+    width: 100px; /* Width of the envelope */
+    height: 60px; /* Height of the envelope */
+    background-color: red; /* Envelope color */
+    border: 2px solid #ff007f; /* Envelope border color */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.flap {
+    position: absolute;
+    top: -20px; /* Position the flap above the envelope */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the flap */
+    background-color: red; /* Flap color */
+    border-top-left-radius: 5px; /* Rounded corners */
+    border-top-right-radius: 5px; /* Rounded corners */
+}
+
+.body {
+    position: absolute;
+    top: 10px; /* Position the body below the flap */
+    left: 5px; /* Indent the body */
+    width: 90%; /* Width of the body */
+    height: 40px; /* Height of the body */
+    background-color: pink; /* Body color */
+}
+
+.heart {
+    position: absolute;
+    bottom: 5px; /* Position the heart inside the envelope */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center */
+    font-size: 20px; /* Size of the heart */
+    color: #ff007f; /* Heart color */
+}
+
+.click-to-open {
+    position: absolute; /* Position the text absolutely */
+    bottom: -30px; /* Distance from the bottom of the envelope */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center the text */
+    font-size: 16px; /* Font size for the text */
+    color: white; /* Text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
+    white-space: nowrap;
+    font-style: italic;
+}
+
+    </style>
+</head>
+<body>
+
+    </style>
+</head>
+<body>
+
+    <h1>" MASTER'S PAGE "</h1> 
+
+
+
+ <div class="animated-text">" JUST REMEMBER,<br>YOU ARE LOVED " </div> 
+
+    <div class="content">
+        <div class="song">
+            <p>1.A poem for you by Ellie</p>
+            <audio id="song1" src="A poem for you.mp3"></audio>
+            <button onclick="playAudio('song1', this)">Play</button>
+            <button onclick="pauseAudio('song1', this)">Pause</button>
+            <button onclick="stopAudio('song1', this)">Stop</button>
+            <span class="beat" style="display: none;">🎶</span>
+        </div>
+        <div class="song">
+            <p>2. Kenny Loggins - For The First Time </p>
+            <audio id="song2" src="Kenny Loggins - For The First Time (Official Video).mp3"></audio>
+            <button onclick="playAudio('song2', this)">Play</button>
+            <button onclick="pauseAudio('song2', this)">Pause</button>
+            <button onclick="stopAudio('song2', this)">Stop</button>
+        </div>
+
+  <div class="song">
+            <p>3. Stay Close, Don't Go - Secondhand Serenade  </p>
+            <audio id="song3" src="Stay Close, Don't Go - Secondhand Serenade - (Lyrics).mp3"></audio>
+            <button onclick="playAudio('song3', this)">Play</button>
+            <button onclick="pauseAudio('song3', this)">Pause</button>
+            <button onclick="stopAudio('song3', this)">Stop</button>
+        </div>
+ <div class="song">
+            <p>4. Teddy Swims - Lose Control</p>
+            <audio id="song4" src="Teddy Swims - Lose Control (Lyrics).mp3"></audio>
+            <button onclick="playAudio('song4', this)">Play</button>
+            <button onclick="pauseAudio('song4', this)">Pause</button>
+            <button onclick="stopAudio('song4', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>5. Don't Speak - No Doubt</p>
+            <audio id="song5" src="Don't Speak - No Doubt (Lyrics).mp3"></audio>
+            <button onclick="playAudio('song5', this)">Play</button>
+            <button onclick="pauseAudio('song5', this)">Pause</button>
+            <button onclick="stopAudio('song5', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>6. When I Look At You - Miley Cyrus</p>
+            <audio id="song6" src="When I Look At You - Miley Cyrus (Lyrics).mp3"></audio>
+            <button onclick="playAudio('song6', this)">Play</button>
+            <button onclick="pauseAudio('song6', this)">Pause</button>
+            <button onclick="stopAudio('song6', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>7. Better be home soon by Crowded House </p>
+            <audio id="song7" src="Better be home soon by Crowded House.mp3"></audio>
+            <button onclick="playAudio('song7', this)">Play</button>
+            <button onclick="pauseAudio('song7', this)">Pause</button>
+            <button onclick="stopAudio('song7', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>8. Neil Finn - Don't Dream It's Over (live with strings, Auckland 2015) </p>
+            <audio id="song8" src="Neil Finn - Don't Dream It's Over (live with strings, Auckland 2015).mp3"></audio>
+            <button onclick="playAudio('song8', this)">Play</button>
+            <button onclick="pauseAudio('song8', this)">Pause</button>
+            <button onclick="stopAudio('song8', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>9. I'LL STAND BY YOU THE PRETENDERS (Ehllen's Cover)</p>
+            <audio id="song9" src="I'LL STAND BY YOU   LYRICS  THE PRETENDERS  Cover by_ Ehllen Quezada.mp3"></audio>
+            <button onclick="playAudio('song9', this)">Play</button>
+            <button onclick="pauseAudio('song9', this)">Pause</button>
+            <button onclick="stopAudio('song9', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>10. THE BEST OF KAREN CARPENTER - Cover by Ehllen Quezada</p>
+            <audio id="song10" src="THE BEST OF KAREN CARPENTER - Cover by Ehllen Quezada.mp3"></audio>
+            <button onclick="playAudio('song10', this)">Play</button>
+            <button onclick="pauseAudio('song10', this)">Pause</button>
+            <button onclick="stopAudio('song10', this)">Stop</button>
+        </div>
+
+
+ <div class="song">
+            <p>11. Maneater- No hard feelings OST Lyrics ( cover by ehllen quezada)</p>
+            <audio id="song11" src="Maneater- No hard feelings OST Lyrics ( cover by ehllen quezada.mp3"></audio>
+            <button onclick="playAudio('song11', this)">Play</button>
+            <button onclick="pauseAudio('song11', this)">Pause</button>
+            <button onclick="stopAudio('song11', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>12. Ordinary song-  Lyrics cover by ehllen quezada</p>
+            <audio id="song12" src="Ordinary song-  Lyrics cover by ehllen quezada.mp3"></audio>
+            <button onclick="playAudio('song12', this)">Play</button>
+            <button onclick="pauseAudio('song12', this)">Pause</button>
+            <button onclick="stopAudio('song12', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>13. Train - Drops of Jupiter </p>
+            <audio id="song13" src="Train - Drops of Jupiter (Lyrics).mp3"></audio>
+            <button onclick="playAudio('song13', this)">Play</button>
+            <button onclick="pauseAudio('song13', this)">Pause</button>
+            <button onclick="stopAudio('song13', this)">Stop</button>
+        </div>
+
+ <div class="song">
+            <p>14. johnny cash - hurt  </p>
+            <audio id="song14" src="johnny cash - hurt (lyrics).mp3"></audio>
+            <button onclick="playAudio('song14', this)">Play</button>
+            <button onclick="pauseAudio('song14', this)">Pause</button>
+            <button onclick="stopAudio('song14', this)">Stop</button>
+        </div>
+
+    </div>
+
+
+
+    <div class="love-letter">
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="body"></div>
+            <div class="heart">❤️</div>
+        </div>
+        <span class="click-to-open">MY INBOX</span>
+    </div>
+
+    <script>
+        function playAudio(songId, button) {
+            const audio = document.getElementById(songId);
+            audio.play();
+            setActiveButton(button);
+        }
+
+        function pauseAudio(songId, button) {
+            const audio = document.getElementById(songId);
+            audio.pause();
+            setActiveButton(button);
+        }
+
+        function stopAudio(songId, button) {
+            const audio = document.getElementById(songId);
+            audio.pause();
+            audio.currentTime = 0; // Reset to the beginning
+            setActiveButton(button);
+        }
+
+        function setActiveButton(activeButton) {
+            // Get all buttons in the document
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                // Remove the active class from all buttons
+                button.classList.remove('active');
+            });
+            // Add the active class to the clicked button
+            activeButton.classList.add('active');
+        }
+    </script>
+
+
+<style>
+
+ .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+            font-family: open sans;
+        }
+
+        .modal-content {
+            background-color: white;
+            color: black;
+            font-family: open sans;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 600px; /* Maximum width */
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+
+<div id="greetingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Have an uplifting friday Jeff!</h2>   <h5> 02/01/2025</h5>
+            <p> 
+I hope you start your day with a smile. 🙂
+Just want to remind you 
+
+You're like a BAOBAB TREE.. Strong and resilient no storm can break you—
+
+You are UNBREAKABLE.. Life hits you hard but
+you manage to overcome each obstacles. 
+
+
+You are never alone in this world, GOD is with you.
+He sees you, He hears you and He is watching you 
+everyday.   Come to him and pray and
+surrender all your worries.
+
+
+You are a good person, Be an inspiration to all and NEVER GIVE UP.  Storms will pass.  
+There's a light at the end of the tunnel.
+
+Good things will come. Be hopeful.
+
+I hope this lightens up your day.𓇢𓆸
+
+<br>
+Love,
+<br>
+Elle
+</p>
+
+<h2> It's a positive friday Dear Jeff! </h2>
+  <h5> 02/07/2025</h5>
+<p>
+How are you?  I hope you are doing well,
+
+I just want to remind you that you are special.
+A man with words of wisdom...
+
+I always love listening to you. I like when you are being open to me.
+
+I like when you are sharing your life experiences with me. I feel valued and trusted. So thank you and I appreciate that.
+
+
+Things that I like/love about you:
+
+
+You are kindhearted, you have a heart of gold.  When you love people, you always treat them special. Never failed to show/express your love.  
+
+
+You love giving gifts, whether big or small....
+It's the thought that counts as people said.
+
+💚
+
+I just want to remind you its not wrong to choose yourself first sometimes..
+Buy something nice for yourself. Or go somewhere nice. Have a short vacation.
+A nature trip is good.
+
+I hope you give the same amount of love for yourself just like you gave for other people.
+
+Be more kind and loving to yourself.
+
+Live happy and live healthy...
+remove toxic things in your life. Stay away from toxic people. 
+
+You are very strong.  Very strong Man on earth.  Don't lose your sight.
+
+God has better plans for you. 
+
+
+Thank you for being part of my life, my journey.  Because of you.
+
+My life has changed.  Getting better and better.  Thank you for being my motivation.
+
+Thank you for teaching me what real love is..
+
+its Unconditional... you have shown me unconditional love. I am lucky to experience that.   For years, you never failed.. never failed to show me that you love me.
+Thank you.. and I love you too.
+
+
+Warms hugs from me.
+
+You are not alone anymore.
+
+I want you to live longer. Have a healthy lifestyle. Eat healthy. 💋
+<br>
+Love,
+<br>
+Elle
+</p>
+
+<h2> Happy Valentines Day </h2>
+  <h5> 02/14/2025</h5>
+  <h3>  A POEM FOR YOU </h3>
+<p>
+
+As quiet as a mouse I am,
+and yet I found my comfort in you,
+Your love is one of a kind, and I am
+so lucky I have met you.
+
+I am just an ordinary girl, 
+just thought superficial,
+But you see what's inside my eyes
+No one treats me like a special
+
+At times, my heart dances to a different tune
+You dance with me—
+You know the melody of my soul
+You know every beat of me.
+
+When I'm with you I'm not wearing my mask
+I don't care being naked— nor being judge by the rest.
+More and more, I was dazzled by you
+Words unspoken, I wish I could tell you everyday.
+You are my unveiled compass, now I'm no longer lost—
+
+<br><br>
+~ehllenquezada
+
+</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the modal
+        function openModal() {
+            document.getElementById("greetingModal").style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("greetingModal").style.display = "none";
+        }
+
+        // Add event listener to the love letter emoji
+        document.querySelector('.love-letter').addEventListener('click', openModal);
+    </script>
+
+
+
+  <div class="beat">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+  
+    </div>
+
+<style>
+
+.beat {
+    position: fixed;
+    padding: 3px;
+    transform: translateY(-220px) rotate(270deg); /* Move up by 20px */
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    font-family: "Vibur", cursive;
+}
+
+.box1,.box2,.box3,.box4,.box5 {
+ width: 10px;
+ height: 10px;
+ background: red;
+ margin: 3px;
+ animation: slide 1s linear infinite alternate;
+
+}
+
+.box2 {
+ background: blue;
+ animation: slide 0.8s linear infinite alternate;
+}
+
+.box3 {
+ background: green;
+ animation: slide .9s linear infinite alternate;
+
+}
+
+.box4 {
+ background: orange;
+ animation: slide .5s linear infinite alternate;
+}
+
+.box5 {
+background: white;
+animation: slide .7s linear infinite alternate;
+}
+
+@keyframes slide {
+ 0% {
+  width: 10px;
+ }
+ 50% {
+  width: 45px;
+ }
+}
+
+
+</style>
+
+
+
+</body>
+</html><div class="status-container1">
+    <textarea id="statusInput1" onfocus="clearDefault(this)" onblur="setDefault(this)">Post your status today</textarea>
+    <div class="button1-container">
+        <button id="postButton1" onclick="saveStatus()">Post</button>
+        <button onclick="deleteStatus()">Delete</button>
+    </div>
+</div>
+
+
+<style>
+    .status-container1 {
+        margin-top: 200px; /* Increased space above the status container */
+        margin-left: 1000px; /* Move the container slightly to the right */
+        text-align: left; /* Align text to the left */
+        border-radius: 10px; 
+        position: fixed;
+    }
+
+    #statusInput1 {
+        padding: 10px; /* Padding for the input */
+        font-size: 16px; /* Font size */
+        border: 2px solid #ccc; /* Border */
+        border-radius: 10px; /* Rounded corners */
+        width: 300px; 
+        height: 200px; /* Increased height */
+        resize: none; /* Prevent resizing */
+        overflow: auto; /* Allow scrolling if text overflows */
+        vertical-align: top; /* Align text to the top */
+        border: 2px solid black;
+    }
+
+    .button1-container {
+        margin-top: 10px; /* Space between input and buttons */
+        text-align: center; /* Center the buttons */
+    }
+
+  
+
+    .button1 {
+        padding: 10px 15px; /* Padding for the button */
+        margin-left: 10px; /* Space between buttons */
+        border: none; /* Remove border */
+        background-color: #ff50b2; /* Button color */
+        color: white; /* Text color */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+    }
+
+    .posted {
+        background-color: #ff007f; /* Color when posted */
+    }
+
+    
+
+    .default {
+        background-color: white; /* Color when default */
+    }
+
+   
+</style>
+
+
+<script>
+function clearDefault(input) {
+    if (input.value === "Post your status today") {
+        input.value = ""; // Clear the default message
+    }
+}
+
+function setDefault(input) {
+    if (input.value === "") {
+        input.value = "Post your status today"; // Reset to default if empty
+    }
+}
+
+function saveStatus() {
+    const statusInput1 = document.getElementById("statusInput1");
+    const statusMessage = statusInput1.value;
+
+    // Check if the input field value is not equal to the default message
+    if (statusMessage !== "Post your status today") {
+        // Save the statusMessage to local storage
+        localStorage.setItem("userStatus", statusMessage); 
+
+        // Change button text and color
+        const postButton1 = document.getElementById("postButton1");
+        postButton1.textContent = "Posted"; // Change text to "Posted"
+        postButton1.classList.remove("default"); // Remove default class
+        postButton1.classList.add("posted"); // Add posted class
+    }
+}
+
+function deleteStatus() {
+    localStorage.removeItem("userStatus"); // Remove the status from local storage
+    document.getElementById("statusInput1").value = "Post your status today"; // Reset the input field
+
+    // Reset button text and color
+    const postButton1 = document.getElementById("postButton1");
+    postButton1.textContent = "Post"; // Change text back to "Post"
+    postButton1.classList.remove("posted"); // Remove posted class
+    postButton1.classList.add("default"); // Add default class
+}
+
+// Function to load the status message when the page loads
+function loadStatus() {
+    const savedStatus = localStorage.getItem("userStatus");
+    const statusInput1 = document.getElementById("statusInput1");
+    const postButton1 = document.getElementById("postButton1");
+
+    if (savedStatus && savedStatus !== "Post your status today") {
+        statusInput1.value = savedStatus; // Set the input field to the saved status
+        postButton1.textContent = "Posted"; // Change text to "Posted"
+        postButton1.classList.remove("default"); // Remove default class
+        postButton1.classList.add("posted"); // Add posted class
+    } else {
+        statusInput1.value = "Post your status today"; // Set default message if no saved status
+    }
+}
+
+// Load the status when the page is loaded
+window.onload = loadStatus;
+</script>
+
+
+
+</body>
+</html>
