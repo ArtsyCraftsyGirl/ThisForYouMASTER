@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master's Page</title>
+
+<body>
+    <video autoplay loop muted class="background-video">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <style>
-   body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
-    background-image: url('soldier.jpg'); 
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-attachment: fixed; /* Keep the background fixed while scrolling */
-    margin: 0; /* Remove default margin */
-    color: white; /* Change text color to white for better contrast */
+
+.background-video {
+    position: fixed; /* Make the video fixed */
+    top: 50%; /* Center the video vertically */
+    left: 50%; /* Center the video horizontally */
+    min-width: 100%; /* Ensure the video covers the entire width */
+    min-height: 100%; /* Ensure the video covers the entire height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    z-index: -1; /* Place the video behind other content */
+    transform: translate(-50%, -50%); /* Center the video */
 }
 
 
+
 h1 {
+       font-family: 'Courier New', monospace;
     color: beige; /* Text color */
     margin: 20px 0; /* Space above and below the title */
     text-shadow: 
@@ -144,7 +151,7 @@ button.active {
     bottom: 5px; /* Position the heart inside the envelope */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust to center */
-    font-size: 50px; /* Size of the heart */
+    font-size: 60px; /* Size of the heart */
     color: #ff007f; /* Heart color */
 }
 
@@ -174,120 +181,195 @@ button.active {
 
  <div class="animated-text">" JUST REMEMBER,<br>YOU ARE LOVED " </div> 
 
-    <div class="content">
-        <div class="song">
-            <p>1.A poem for you by Ellie</p>
-            <audio id="song1" src="A poem for you.mp3"></audio>
-            <button onclick="playAudio('song1', this)">Play</button>
-            <button onclick="pauseAudio('song1', this)">Pause</button>
-            <button onclick="stopAudio('song1', this)">Stop</button>
-            <span class="beat" style="display: none;">🎶</span>
-        </div>
-        <div class="song">
-            <p>2. Kenny Loggins - For The First Time </p>
-            <audio id="song2" src="Kenny Loggins - For The First Time (Official Video).mp3"></audio>
-            <button onclick="playAudio('song2', this)">Play</button>
-            <button onclick="pauseAudio('song2', this)">Pause</button>
-            <button onclick="stopAudio('song2', this)">Stop</button>
-        </div>
-
-  <div class="song">
-            <p>3. Stay Close, Don't Go - Secondhand Serenade  </p>
-            <audio id="song3" src="Stay Close, Don't Go - Secondhand Serenade - (Lyrics).mp3"></audio>
-            <button onclick="playAudio('song3', this)">Play</button>
-            <button onclick="pauseAudio('song3', this)">Pause</button>
-            <button onclick="stopAudio('song3', this)">Stop</button>
-        </div>
- <div class="song">
-            <p>4. Teddy Swims - Lose Control</p>
-            <audio id="song4" src="Teddy Swims - Lose Control (Lyrics).mp3"></audio>
-            <button onclick="playAudio('song4', this)">Play</button>
-            <button onclick="pauseAudio('song4', this)">Pause</button>
-            <button onclick="stopAudio('song4', this)">Stop</button>
-        </div>
-
- <div class="song">
-            <p>5. Don't Speak - No Doubt</p>
-            <audio id="song5" src="Don't Speak - No Doubt (Lyrics).mp3"></audio>
-            <button onclick="playAudio('song5', this)">Play</button>
-            <button onclick="pauseAudio('song5', this)">Pause</button>
-            <button onclick="stopAudio('song5', this)">Stop</button>
-        </div>
-
- <div class="song">
-            <p>6. When I Look At You - Miley Cyrus</p>
-            <audio id="song6" src="When I Look At You - Miley Cyrus (Lyrics).mp3"></audio>
-            <button onclick="playAudio('song6', this)">Play</button>
-            <button onclick="pauseAudio('song6', this)">Pause</button>
-            <button onclick="stopAudio('song6', this)">Stop</button>
-        </div>
-
- <div class="song">
-            <p>7. Better be home soon by Crowded House </p>
-            <audio id="song7" src="Better be home soon by Crowded House.mp3"></audio>
-            <button onclick="playAudio('song7', this)">Play</button>
-            <button onclick="pauseAudio('song7', this)">Pause</button>
-            <button onclick="stopAudio('song7', this)">Stop</button>
-        </div>
-
- <div class="song">
-            <p>8. Neil Finn - Don't Dream It's Over (live with strings, Auckland 2015) </p>
-            <audio id="song8" src="Neil Finn - Don't Dream It's Over (live with strings, Auckland 2015).mp3"></audio>
-            <button onclick="playAudio('song8', this)">Play</button>
-            <button onclick="pauseAudio('song8', this)">Pause</button>
-            <button onclick="stopAudio('song8', this)">Stop</button>
-        </div>
-
- <div class="song">
-            <p>9. I'LL STAND BY YOU THE PRETENDERS (Ehllen's Cover)</p>
-            <audio id="song9" src="I'LL STAND BY YOU   LYRICS  THE PRETENDERS  Cover by_ Ehllen Quezada.mp3"></audio>
-            <button onclick="playAudio('song9', this)">Play</button>
-            <button onclick="pauseAudio('song9', this)">Pause</button>
-            <button onclick="stopAudio('song9', this)">Stop</button>
-        </div>
-
- <div class="song">
-            <p>10. THE BEST OF KAREN CARPENTER - Cover by Ehllen Quezada</p>
-            <audio id="song10" src="THE BEST OF KAREN CARPENTER - Cover by Ehllen Quezada.mp3"></audio>
-            <button onclick="playAudio('song10', this)">Play</button>
-            <button onclick="pauseAudio('song10', this)">Pause</button>
-            <button onclick="stopAudio('song10', this)">Stop</button>
-        </div>
+   
 
 
- <div class="song">
-            <p>11. Maneater- No hard feelings OST Lyrics ( cover by ehllen quezada)</p>
-            <audio id="song11" src="Maneater- No hard feelings OST Lyrics ( cover by ehllen quezada.mp3"></audio>
-            <button onclick="playAudio('song11', this)">Play</button>
-            <button onclick="pauseAudio('song11', this)">Pause</button>
-            <button onclick="stopAudio('song11', this)">Stop</button>
+ <div class="container">
+        <h3>🎶 Master's Playlist</h3>
+        <div class="current-song">
+            <h2 id="song-title">One Last Song - A1</h2>
         </div>
-
- <div class="song">
-            <p>12. Ordinary song-  Lyrics cover by ehllen quezada</p>
-            <audio id="song12" src="Ordinary song-  Lyrics cover by ehllen quezada.mp3"></audio>
-            <button onclick="playAudio('song12', this)">Play</button>
-            <button onclick="pauseAudio('song12', this)">Pause</button>
-            <button onclick="stopAudio('song12', this)">Stop</button>
+        <div class="controls">
+            <button id="play-btn">▶️</button>
+            <button id="pause-btn">⏸️</button>
+            <button id="stop-btn">⏹️</button>
         </div>
-
- <div class="song">
-            <p>13. Train - Drops of Jupiter </p>
-            <audio id="song13" src="Train - Drops of Jupiter (Lyrics).mp3"></audio>
-            <button onclick="playAudio('song13', this)">Play</button>
-            <button onclick="pauseAudio('song13', this)">Pause</button>
-            <button onclick="stopAudio('song13', this)">Stop</button>
+        <div class="navigation">
+            <button id="prev-btn">⏮️ Previous</button>
+            <button id="next-btn">Next ⏭️</button>
         </div>
-
- <div class="song">
-            <p>14. johnny cash - hurt  </p>
-            <audio id="song14" src="johnny cash - hurt (lyrics).mp3"></audio>
-            <button onclick="playAudio('song14', this)">Play</button>
-            <button onclick="pauseAudio('song14', this)">Pause</button>
-            <button onclick="stopAudio('song14', this)">Stop</button>
-        </div>
-
     </div>
+
+    <audio id="audio" src="Brad Paisley - She's Everything (Lyrics).mp3"></audio>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            background-color: white;
+            color: white;
+            margin: 0;
+            padding: 10px;
+        }
+
+    .container {
+    text-align: left; /* Align text to the left */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    position: fixed; /* Position the container absolutely */
+    top: 110px; /* Adjust this value to move it down */
+    left: 20px; /* Distance from the left */
+    border: 3px ridge black; /* 3px ridge black border */
+    width: 300px; /* Set a fixed width */
+    height: 200px; /* Set a fixed height */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.current-song h2 {
+    white-space: normal; /* Allow text to wrap */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    max-height: 3em; /* Limit height to 2 lines (approximately) */
+    line-height: 1.5em; /* Set line height */
+}
+
+        .controls, .navigation {
+            margin: 20px 0;
+        }
+
+        button {
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+
+    <script>
+        const songs = [
+            { title: "1. A poem for you", artist: "Ehllen Quezada", src: "A poem for you (mp3cut.net).mp3" },
+            { title: "2. The Road Not Taken", artist: "Robert Frost", src: "The Road Not Taken, by Robert Frost (HD).mp3" },
+            { title: "3. Canon in D", artist: "Brooklyn Duo", src: "Canon in D (Pachelbel's Canon) - Cello & Piano [BEST WEDDING VERSION].mp3" },
+            { title: "4. For The First Time", artist: "Kenny Loggins", src: "Kenny Loggins - For The First Time (Official Video).mp3" },
+            { title: "5. Better be home soon", artist: "Crowded House", src: "Better be home soon by Crowded House.mp3" },
+            { title: "6. Don't Dream It's Over", artist: "Neil Finn", src: "Neil Finn - Don't Dream It's Over (live with strings, Auckland 2015).mp3" },
+            { title: "7. THE BEST OF KAREN CARPENTER", artist: "Ehllen Quezada", src: "THE BEST OF KAREN CARPENTER - Cover by Ehllen Quezada.mp3" },
+            { title: "8. I'LL STAND BY YOU ", artist: "Ehllen Quezada", src: "I'LL STAND BY YOU   LYRICS  THE PRETENDERS  Cover by_ Ehllen Quezada.mp3" },
+            { title: "9. Maneater", artist: "Ehllen Quezada", src: "Maneater- No hard feelings OST Lyrics ( cover by ehllen quezada.mp3" },
+            { title: "10. HURT", artist: "Johnny Cash", src: "johnny cash - hurt (lyrics).mp3" },
+            { title: "11. Ordinary song", artist: "Ehllen Quezada", src: "Ordinary song-  Lyrics cover by ehllen quezada.mp3" },
+            { title: "12. Drops of Jupiter", artist: "Train", src: "Train - Drops of Jupiter (Lyrics).mp3" },
+            { title: "13. Stay Close, Don't Go", artist: "Secondhand Serenade", src: "Stay Close, Don't Go - Secondhand Serenade - (Lyrics).mp3" },
+            { title: "14. Lose Control", artist: "Teddy Swims", src: "Teddy Swims - Lose Control (Lyrics).mp3" },
+            { title: "15. Say you won't let go", artist: "Ehllen Quezada", src: "82_s_0bca6532fbahweajy7odsnsfl5yaul5qo22a.f0 (mp3cut.net).mp3" },
+            { title: "16. When I Look At You", artist: "Miley Cyrus", src: "When I Look At You - Miley Cyrus (Lyrics).mp3" },
+            { title: "17. One tin soldier", artist: "Ehllen Quezada", src: "SongPeel-Reverb-Output (2).wav" },
+            { title: "17. Two Less Lonely People in the World", artist: "Air Supply", src: "Air Supply - Two Less Lonely People in the World (Lyrics).mp3" },
+        ];
+
+        let currentSongIndex = 0;
+        const audio = document.getElementById('audio');
+        const songTitle = document.getElementById('song-title');
+
+        function updateSong() {
+            audio.src = songs[currentSongIndex].src;
+            songTitle.textContent = `${songs[currentSongIndex].title} - ${songs[currentSongIndex].artist}`;
+            audio.load(); // Load the new song
+        }
+
+        document.getElementById('play-btn').addEventListener('click', () => {
+            audio.play();
+        });
+
+        document.getElementById('pause-btn').addEventListener('click', () => {
+            audio.pause();
+        });
+
+        document.getElementById('stop-btn').addEventListener('click', () => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length; // Loop back to the first song
+            updateSong();
+            audio.play(); // Automatically play the next song
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length; // Loop back to the last song
+            updateSong();
+            audio.play(); // Automatically play the previous song
+        });
+
+        // Initialize the first song
+        updateSong();
+    </script>
+
+
+    <div class="jump-to-song">
+        <label for="song-select">Jump to Song:</label>
+        <select id="song-select">
+            <option value="0">1. A poem for you</option>
+            <option value="1">2. The Road Not Taken</option>
+            <option value="2">3. Canon in D</option>
+            <option value="3">4. For The First Time</option>
+            <option value="4">5. Better be home soon</option>
+            <option value="5">6. Don't Dream It's Over</option>
+            <option value="6">7. THE BEST OF KAREN CARPENTER</option>
+            <option value="7">8. I'LL STAND BY YOU </option>
+            <option value="8">9. Maneater</option>
+            <option value="9">10. HURT</option>
+            <option value="10">11. Ordinary song</option>
+            <option value="11">12. Drops of Jupiter</option>
+            <option value="12">13. Stay Close, Don't Go</option>
+            <option value="13">14. Lose Contro</option>
+            <option value="14">15. Say you won't let go</option>
+            <option value="15">16. When I Look At You </option>
+            <option value="16">17. One tin soldier</option>
+               </select>
+    </div>
+
+
+<style>
+
+.jump-to-song {
+    top: 370px; /* Increase space above the dropdown to move it down */
+    text-align: left; /* Align the dropdown to the left */
+    z-index: 10; /* Ensure it appears above other elements */
+    margin-right: 1000px; /* Optional: Adjust this value to move it away from the left edge */
+    position: fixed;
+}
+
+.jump-to-song label {
+    margin-right: 5px; /* Space between label and dropdown */
+    margin-top: 200px; /* Add margin to move the label down */
+    color: white; /* Change label color to white for visibility */
+}
+
+</style>
+<script>
+document.getElementById('song-select').addEventListener('change', function() {
+    currentSongIndex = parseInt(this.value); // Get the selected song index
+    updateSong(); // Update the song display
+    audio.play(); // Automatically play the selected song
+});
+
+</script>
+
+
+
+
 
 
 
@@ -352,6 +434,7 @@ button.active {
             background-color: white;
             color: black;
             font-family: open sans;
+            font-size: 15px;
             margin: 15% auto; /* 15% from the top and centered */
             padding: 20px;
             border: 1px solid #888;
@@ -469,34 +552,7 @@ Love,
 Elle
 </p>
 
-<h2> Happy Valentines Day </h2>
-  <h5> 02/14/2025</h5>
-  <h3>  A POEM FOR YOU </h3>
-<p>
 
-As quiet as a mouse I am,
-and yet I found my comfort in you,
-Your love is one of a kind, and I am
-so lucky I have met you.
-
-I am just an ordinary girl, 
-just thought superficial,
-But you see what's inside my eyes
-No one treats me like a special
-
-At times, my heart dances to a different tune
-You dance with me—
-You know the melody of my soul
-You know every beat of me.
-
-When I'm with you I'm not wearing my mask
-I don't care being naked— nor being judge by the rest.
-More and more, I was dazzled by you
-Words unspoken, I wish I could tell you everyday.
-You are my unveiled compass, now I'm no longer lost—
-
-<br><br>
-~ehllenquezada
 
 </p>
         </div>
@@ -517,196 +573,75 @@ You are my unveiled compass, now I'm no longer lost—
         document.querySelector('.love-letter').addEventListener('click', openModal);
     </script>
 
+<div class="poem-container">
+    <h2> "A poem for you" </h2>
+    <p>
 
+<br>As quiet as a mouse I am,
+<br>
+and yet I found my comfort in you,
+<br>
+Your love is one of a kind, and I am
+<br>
+so lucky I have met you.
 
-  <div class="beat">
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-        <div class="box4"></div>
-        <div class="box5"></div>
-  
-    </div>
+<br>
+I am just an ordinary girl, 
+<br>
+just thought superficial,
+<br>
+But you see what's inside my eyes
+<br>
+No one treats me like a special
+<br>
+At times, my heart dances to a different tune
+<br>
+You dance with me—
+<br>
+You know the melody of my soul
+<br>
+You know every beat of me.
+<br>
+When I'm with you I'm not wearing my mask
+<br>
+I don't care being naked— nor being judge by the rest.
+<br>
+More and more, I was dazzled by you
+<br>
+Words unspoken, I wish I could tell you everyday.
+<br>
+You are my unveiled compass, now I'm no longer lost—
+<br>
 
-<style>
-
-.beat {
-    position: fixed;
-    padding: 3px;
-    transform: translateY(-220px) rotate(270deg); /* Move up by 20px */
-    width: 100px;
-    height: 50px;
-    margin: 0 auto;
-    font-family: "Vibur", cursive;
-}
-
-.box1,.box2,.box3,.box4,.box5 {
- width: 10px;
- height: 10px;
- background: red;
- margin: 3px;
- animation: slide 1s linear infinite alternate;
-
-}
-
-.box2 {
- background: blue;
- animation: slide 0.8s linear infinite alternate;
-}
-
-.box3 {
- background: green;
- animation: slide .9s linear infinite alternate;
-
-}
-
-.box4 {
- background: orange;
- animation: slide .5s linear infinite alternate;
-}
-
-.box5 {
-background: white;
-animation: slide .7s linear infinite alternate;
-}
-
-@keyframes slide {
- 0% {
-  width: 10px;
- }
- 50% {
-  width: 45px;
- }
-}
-
-
-</style>
-
-
-
-</body>
-</html><div class="status-container1">
-    <textarea id="statusInput1" onfocus="clearDefault(this)" onblur="setDefault(this)">Post your status today</textarea>
-    <div class="button1-container">
-        <button id="postButton1" onclick="saveStatus()">Post</button>
-        <button onclick="deleteStatus()">Delete</button>
-    </div>
+    </p>
+    <p> ~ehllenquezada </p>
 </div>
 
-
 <style>
-    .status-container1 {
-        margin-top: 200px; /* Increased space above the status container */
-        margin-left: 1000px; /* Move the container slightly to the right */
-        text-align: left; /* Align text to the left */
-        border-radius: 10px; 
-        position: fixed;
-    }
-
-    #statusInput1 {
-        padding: 10px; /* Padding for the input */
-        font-size: 16px; /* Font size */
-        border: 2px solid #ccc; /* Border */
-        border-radius: 10px; /* Rounded corners */
-        width: 300px; 
-        height: 200px; /* Increased height */
-        resize: none; /* Prevent resizing */
-        overflow: auto; /* Allow scrolling if text overflows */
-        vertical-align: top; /* Align text to the top */
-        border: 2px solid black;
-    }
-
-    .button1-container {
-        margin-top: 10px; /* Space between input and buttons */
-        text-align: center; /* Center the buttons */
-    }
-
-  
-
-    .button1 {
-        padding: 10px 15px; /* Padding for the button */
-        margin-left: 10px; /* Space between buttons */
-        border: none; /* Remove border */
-        background-color: #ff50b2; /* Button color */
-        color: white; /* Text color */
-        border-radius: 5px; /* Rounded corners */
-        cursor: pointer; /* Pointer cursor on hover */
-    }
-
-    .posted {
-        background-color: #ff007f; /* Color when posted */
-    }
-
-    
-
-    .default {
-        background-color: white; /* Color when default */
-    }
-
-   
+.poem-container {
+    background-color: none; /* Light beige color for old paper */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 20px; /* Padding inside the box */
+    margin: 20px; /* Margin around the box */
+    max-width: 340px; /* Maximum width */
+    height: auto; /* Allow height to adjust based on content */
+    color: beige; /* Darker text color for better readability */
+    text-align: left; /* Align text to the left */
+    position: fixed; /* Fixed position */
+    bottom: 5px; /* Distance from the bottom */
+    right: 5px; /* Distance from the right */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
+    overflow: auto; /* Allow scrolling if text overflows */
+    font-size: 13px;
+    font-style: italic;
+    font-family: verdana; /* Use a serif font for a classic look */
+    background-blend-mode: multiply; /* Blend the texture with the background color */
+}
 </style>
 
 
-<script>
-function clearDefault(input) {
-    if (input.value === "Post your status today") {
-        input.value = ""; // Clear the default message
-    }
-}
 
-function setDefault(input) {
-    if (input.value === "") {
-        input.value = "Post your status today"; // Reset to default if empty
-    }
-}
 
-function saveStatus() {
-    const statusInput1 = document.getElementById("statusInput1");
-    const statusMessage = statusInput1.value;
-
-    // Check if the input field value is not equal to the default message
-    if (statusMessage !== "Post your status today") {
-        // Save the statusMessage to local storage
-        localStorage.setItem("userStatus", statusMessage); 
-
-        // Change button text and color
-        const postButton1 = document.getElementById("postButton1");
-        postButton1.textContent = "Posted"; // Change text to "Posted"
-        postButton1.classList.remove("default"); // Remove default class
-        postButton1.classList.add("posted"); // Add posted class
-    }
-}
-
-function deleteStatus() {
-    localStorage.removeItem("userStatus"); // Remove the status from local storage
-    document.getElementById("statusInput1").value = "Post your status today"; // Reset the input field
-
-    // Reset button text and color
-    const postButton1 = document.getElementById("postButton1");
-    postButton1.textContent = "Post"; // Change text back to "Post"
-    postButton1.classList.remove("posted"); // Remove posted class
-    postButton1.classList.add("default"); // Add default class
-}
-
-// Function to load the status message when the page loads
-function loadStatus() {
-    const savedStatus = localStorage.getItem("userStatus");
-    const statusInput1 = document.getElementById("statusInput1");
-    const postButton1 = document.getElementById("postButton1");
-
-    if (savedStatus && savedStatus !== "Post your status today") {
-        statusInput1.value = savedStatus; // Set the input field to the saved status
-        postButton1.textContent = "Posted"; // Change text to "Posted"
-        postButton1.classList.remove("default"); // Remove default class
-        postButton1.classList.add("posted"); // Add posted class
-    } else {
-        statusInput1.value = "Post your status today"; // Set default message if no saved status
-    }
-}
-
-// Load the status when the page is loaded
-window.onload = loadStatus;
-</script>
 
 
 
