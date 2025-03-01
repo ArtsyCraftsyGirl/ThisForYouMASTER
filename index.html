@@ -97,79 +97,6 @@ button.active {
 
 
 
-.love-letter-message {
-    font-size: 24px; /* Font size for the message */
-    font-style: italic;
-    color: white; /* Text color */
-    margin-bottom: 0; /* Remove space between the message and the emoji */
-    position: fixed; /* Position the message absolutely */
-    top: 30px; /* Distance from the top of the viewport */
-    right: 50px; /* Distance from the right side of the viewport */
-}
-
- 
-.love-letter {
-    position: fixed; /* Position the emoji absolutely */
-    top: 20px; /* Distance from the top of the viewport */
-    right: 20px; /* Distance from the right side of the viewport */
-    font-size: 100px; /* Adjust size */
-    text-align: center; /* Center the text */
-}
-
-.envelope {
-    position: relative;
-    width: 100px; /* Width of the envelope */
-    height: 60px; /* Height of the envelope */
-    background-color: red; /* Envelope color */
-    border: 2px solid #ff007f; /* Envelope border color */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-}
-
-.flap {
-    position: absolute;
-    top: -20px; /* Position the flap above the envelope */
-    left: 0;
-    width: 100%;
-    height: 20px; /* Height of the flap */
-    background-color: red; /* Flap color */
-    border-top-left-radius: 5px; /* Rounded corners */
-    border-top-right-radius: 5px; /* Rounded corners */
-}
-
-.body {
-    position: absolute;
-    top: 10px; /* Position the body below the flap */
-    left: 5px; /* Indent the body */
-    width: 90%; /* Width of the body */
-    height: 40px; /* Height of the body */
-    background-color: pink; /* Body color */
-}
-
-.heart {
-    position: absolute;
-    bottom: 5px; /* Position the heart inside the envelope */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to center */
-    font-size: 60px; /* Size of the heart */
-    color: #ff007f; /* Heart color */
-}
-
-.click-to-open {
-    position: absolute; /* Position the text absolutely */
-    bottom: -30px; /* Distance from the bottom of the envelope */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to center the text */
-    font-size: 16px; /* Font size for the text */
-    color: white; /* Text color */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
-    white-space: nowrap;
-    font-style: italic;
-}
-
-    </style>
-</head>
-<body>
 
     </style>
 </head>
@@ -373,14 +300,7 @@ document.getElementById('song-select').addEventListener('change', function() {
 
 
 
-    <div class="love-letter">
-        <div class="envelope">
-            <div class="flap"></div>
-            <div class="body"></div>
-            <div class="heart">❤️</div>
-        </div>
-        <span class="click-to-open">MY INBOX</span>
-    </div>
+  
 
     <script>
         function playAudio(songId, button) {
@@ -415,9 +335,157 @@ document.getElementById('song-select').addEventListener('change', function() {
     </script>
 
 
+
+
+<div class="poem-container">
+    <h2> "A poem for you" </h2>
+    <p>
+
+<br>As quiet as a mouse I am,
+<br>
+and yet I found my comfort in you,
+<br>
+Your love is one of a kind, and I am
+<br>
+so lucky I have met you.
+
+<br>
+I am just an ordinary girl, 
+<br>
+just thought superficial,
+<br>
+But you see what's inside my eyes
+<br>
+No one treats me like a special
+<br>
+At times, my heart dances to a different tune
+<br>
+You dance with me—
+<br>
+You know the melody of my soul
+<br>
+You know every beat of me.
+<br>
+When I'm with you I'm not wearing my mask
+<br>
+I don't care being naked— nor being judge by the rest.
+<br>
+More and more, I was dazzled by you
+<br>
+Words unspoken, I wish I could tell you everyday.
+<br>
+You are my unveiled compass, now I'm no longer lost—
+<br>
+
+    </p>
+    <p> ~ehllenquezada </p>
+</div>
+
+<style>
+.poem-container {
+    background-color: none; /* Light beige color for old paper */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 20px; /* Padding inside the box */
+    margin: 20px; /* Margin around the box */
+    max-width: 340px; /* Maximum width */
+    height: auto; /* Allow height to adjust based on content */
+    color: beige; /* Darker text color for better readability */
+    text-align: left; /* Align text to the left */
+    position: fixed; /* Fixed position */
+    bottom: 5px; /* Distance from the bottom */
+    right: 5px; /* Distance from the right */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
+    overflow: auto; /* Allow scrolling if text overflows */
+    font-size: 13px;
+    font-style: italic;
+    font-family: verdana; /* Use a serif font for a classic look */
+    background-blend-mode: multiply; /* Blend the texture with the background color */
+}
+</style>
+
+
+
 <style>
 
- .modal {
+.love-letter-message {
+    font-size: 24px; /* Font size for the message */
+    font-style: italic;
+    color: black; /* Text color */
+    margin-bottom: 0; /* Remove space between the message and the emoji */
+    position: fixed; /* Position the message absolutely */
+    top: 30px; /* Distance from the top of the viewport */
+    right: 50px; /* Distance from the right side of the viewport */
+}
+
+ 
+.love-letter {
+    position: fixed; /* Position the emoji absolutely */
+    top: 20px; /* Distance from the top of the viewport */
+    right: 20px; /* Distance from the right side of the viewport */
+    font-size: 100px; /* Adjust size */
+    text-align: center; /* Center the text */
+}
+
+.envelope {
+    position: relative;
+    width: 100px; /* Width of the envelope */
+    height: 60px; /* Height of the envelope */
+    background-color: red; /* Envelope color */
+    border: 2px solid black; /* Envelope border color */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.flap {
+    position: absolute;
+    top: -20px; /* Position the flap above the envelope */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the flap */
+    background-color: red; /* Flap color */
+    border-top-left-radius: 5px; /* Rounded corners */
+    border-top-right-radius: 5px; /* Rounded corners */
+}
+
+.body {
+    position: absolute;
+    top: 10px; /* Position the body below the flap */
+    left: 5px; /* Indent the body */
+    width: 90%; /* Width of the body */
+    height: 40px; /* Height of the body */
+    background-color: black; /* Body color */
+}
+
+.heart {
+    position: absolute;
+    bottom: 5px; /* Position the heart inside the envelope */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center */
+    font-size: 60px; /* Size of the heart */
+    color: #ff007f; /* Heart color */
+}
+
+.click-to-open {
+    position: absolute; /* Position the text absolutely */
+    bottom: -30px; /* Distance from the bottom of the envelope */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center the text */
+    font-size: 16px; /* Font size for the text */
+    color: white; /* Text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
+    white-space: nowrap;
+    font-style: italic;
+}
+
+    </style>
+</head>
+<body>
+
+ 
+
+
+      <style>
+        .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
             z-index: 1000; /* Sit on top */
@@ -427,13 +495,13 @@ document.getElementById('song-select').addEventListener('change', function() {
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
             background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
-            font-family: open sans;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .modal-content {
             background-color: white;
             color: black;
-            font-family: open sans;
+            font-family: 'Open Sans', sans-serif;
             font-size: 15px;
             margin: 15% auto; /* 15% from the top and centered */
             padding: 20px;
@@ -455,13 +523,40 @@ document.getElementById('song-select').addEventListener('change', function() {
             text-decoration: none;
             cursor: pointer;
         }
-    </style>
 
+/* Keyframe animation for slow bouncing effect */
+@keyframes slowBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px); /* Move up */
+    }
+    60% {
+        transform: translateY(-5px); /* Move down slightly */
+    }
+}
+
+/* Style for the image */
+.love-letter img {
+    cursor: pointer; /* Change to pointer */
+    width: 130px; /* Set a width for the image */
+    height: 100px; /* Maintain aspect ratio */
+    margin-bottom: -40px; /* Adjust this value to move the image up */
+    animation: slowBounce 2s infinite; /* Apply the slow bounce animation */
+}
+    </style>
+</head>
+<body>
+
+<div class="love-letter">
+    <img src="letter.png" alt="Love Letter" />
+</div>
 
 <div id="greetingModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal()">&times;</span>
-            <h2>Have an uplifting friday Jeff!</h2>   <h5> 02/01/2025</h5>
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+          <h2>Have an uplifting friday Jeff!</h2>   <h5> 02/01/2025</h5>
             <p> 
 I hope you start your day with a smile. 🙂
 Just want to remind you 
@@ -551,95 +646,23 @@ Love,
 <br>
 Elle
 </p>
-
-
-
-</p>
-        </div>
     </div>
-
-    <script>
-        // Function to open the modal
-        function openModal() {
-            document.getElementById("greetingModal").style.display = "block";
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById("greetingModal").style.display = "none";
-        }
-
-        // Add event listener to the love letter emoji
-        document.querySelector('.love-letter').addEventListener('click', openModal);
-    </script>
-
-<div class="poem-container">
-    <h2> "A poem for you" </h2>
-    <p>
-
-<br>As quiet as a mouse I am,
-<br>
-and yet I found my comfort in you,
-<br>
-Your love is one of a kind, and I am
-<br>
-so lucky I have met you.
-
-<br>
-I am just an ordinary girl, 
-<br>
-just thought superficial,
-<br>
-But you see what's inside my eyes
-<br>
-No one treats me like a special
-<br>
-At times, my heart dances to a different tune
-<br>
-You dance with me—
-<br>
-You know the melody of my soul
-<br>
-You know every beat of me.
-<br>
-When I'm with you I'm not wearing my mask
-<br>
-I don't care being naked— nor being judge by the rest.
-<br>
-More and more, I was dazzled by you
-<br>
-Words unspoken, I wish I could tell you everyday.
-<br>
-You are my unveiled compass, now I'm no longer lost—
-<br>
-
-    </p>
-    <p> ~ehllenquezada </p>
 </div>
 
-<style>
-.poem-container {
-    background-color: none; /* Light beige color for old paper */
-    border-radius: 5px; /* Slightly rounded corners */
-    padding: 20px; /* Padding inside the box */
-    margin: 20px; /* Margin around the box */
-    max-width: 340px; /* Maximum width */
-    height: auto; /* Allow height to adjust based on content */
-    color: beige; /* Darker text color for better readability */
-    text-align: left; /* Align text to the left */
-    position: fixed; /* Fixed position */
-    bottom: 5px; /* Distance from the bottom */
-    right: 5px; /* Distance from the right */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
-    overflow: auto; /* Allow scrolling if text overflows */
-    font-size: 13px;
-    font-style: italic;
-    font-family: verdana; /* Use a serif font for a classic look */
-    background-blend-mode: multiply; /* Blend the texture with the background color */
-}
-</style>
+<script>
+    // Function to open the modal
+    function openModal() {
+        document.getElementById("greetingModal").style.display = "block";
+    }
 
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById("greetingModal").style.display = "none";
+    }
 
+    // Add event listener to the love letter image
+    document.querySelector('.love-letter img').addEventListener('click', openModal);
+</script>
 
 
 
