@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master's Page</title>
-
-<body>
-    <video autoplay loop muted class="background-video">
-        <source src="video.mp4" type="video/mp4">
+    <title> Master's Page</title>
+ 
+      <video autoplay loop muted class="background-video">
+        <source src="scene.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <style>
+ 
 
+
+
+
+    <style>
 .background-video {
     position: fixed; /* Make the video fixed */
     top: 50%; /* Center the video vertically */
@@ -25,23 +28,18 @@
     transform: translate(-50%, -50%); /* Center the video */
 }
 
-
-
 h1 {
-       font-family: 'Courier New', monospace;
-    color: beige; /* Text color */
-    margin: 20px 0; /* Space above and below the title */
-    text-shadow: 
-        2px 2px 0 rgba(0, 0, 0, 0.7), /* Right shadow */
-        4px 4px 0 rgba(0, 0, 0, 0.7), /* Further right shadow */
-        6px 6px 0 rgba(0, 0, 0, 0.7), /* Even further right shadow */
-        8px 8px 0 rgba(0, 0, 0, 0.7); /* Furthest right shadow */
+    display: none; /* Hide the h1 element since we are using an image */
+}
+.image-title {
     position: fixed; 
-    top: 10px; /* Distance from the top of the viewport */
+    top: 25px; /* Distance from the top of the viewport */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust to center the title */
-    font-size: 48px; /* Increase the font size (adjust as needed) */
+    width: auto; /* Adjust width as needed */
+    height: 68px; /* Set height to match the original font size */
 }
+
         .content {
             text-align: left; /* Align content to the left */
             position: absolute; /* Position the content absolutely */
@@ -55,7 +53,7 @@ h1 {
 button {
     background-color: white; /* Default button color */
     color: black; /* Text color */
-    border: 3px outset black; /* Border */
+    border: 3px outset red; 
     padding: 2px 3px; /* Padding for the button */
     margin-right: 5px; /* Space between buttons */
     cursor: pointer; /* Pointer cursor on hover */
@@ -83,6 +81,7 @@ button.active {
     border-radius: 5px; /* Rounded corners */
     color: #ff0000; /* Neon red color */
     font-size: 24px; /* Font size */
+    font-family: calibri;
     animation: neon 1.5s ease-in-out infinite alternate; /* Animation */
 }
 
@@ -95,255 +94,56 @@ button.active {
     }
 }
 
-
-
-
-    </style>
-</head>
-<body>
-
-    <h1>" MASTER'S PAGE "</h1> 
-
-
-
- <div class="animated-text">" JUST REMEMBER,<br>YOU ARE LOVED " </div> 
-
-   
-
-
- <div class="container">
-        <h3>🎶 Master's Playlist</h3>
-        <div class="current-song">
-            <h2 id="song-title">One Last Song - A1</h2>
-        </div>
-        <div class="controls">
-            <button id="play-btn">▶️</button>
-            <button id="pause-btn">⏸️</button>
-            <button id="stop-btn">⏹️</button>
-        </div>
-           <div class="navigation">
-        <button id="prev-btn" class="small-button">⏮️ Previous</button>
-        <button id="next-btn" class="small-button">Next ⏭️</button>
-        <button id="autoplay-btn" class="small-button" style="margin-top: -25px;">🔁 Go Autoplay</button> <!-- New Autoplay Button -->
-    </div>
-</div>
-
-    <audio id="audio" src="Brad Paisley - She's Everything (Lyrics).mp3"></audio>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 10px;
-            background-color: white;
-            color: white;
-            margin: 0;
-            padding: 10px;
-        }
-
-    .container {
-    text-align: left; /* Align text to the left */
-    background: none;
-    padding: 20px; /* Padding inside the container */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
-    position: fixed; /* Position the container absolutely */
-    top: 110px; /* Adjust this value to move it down */
-    left: 20px; /* Distance from the left */
-    border: 3px ridge black; /* 3px ridge black border */
-    width: 300px; /* Set a fixed width */
-    height: 180px; /* Set a fixed height */
-    overflow: hidden; /* Hide overflow content */
-}
-
-.current-song h2 {
-    white-space: normal; /* Allow text to wrap */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis for overflow text */
-    max-height: 3em; /* Limit height to 2 lines (approximately) */
-    line-height: 1.5em; /* Set line height */
-}
-
-        .controls, .navigation {
-            margin: 20px 0;
-        }
-
-        button {
-            background: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            margin: 0 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background: #0056b3;
-        }
 .small-button {
-    padding: 8px 10px; /* Adjust padding to make buttons smaller */
+    padding: 5px 9px; /* Adjust padding to make buttons smaller */
     font-size: 12px; /* Adjust font size */
     border: none; /* Remove default border */
     border-radius: 5px; /* Optional: add rounded corners */
     cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-    </style>
-
-    <script>
-        const songs = [
-            { title: "1. A poem for you", artist: "Ehllen Quezada", src: "A poem for you (mp3cut.net).mp3" },
-            { title: "2. The Road Not Taken", artist: "Robert Frost", src: "The Road Not Taken, by Robert Frost (HD).mp3" },
-            { title: "3. Canon in D", artist: "Brooklyn Duo", src: "Canon in D (Pachelbel's Canon) - Cello & Piano [BEST WEDDING VERSION].mp3" },
-            { title: "4. For The First Time", artist: "Kenny Loggins", src: "Kenny Loggins - For The First Time (Official Video).mp3" },
-            { title: "5. Better be home soon", artist: "Crowded House", src: "Better be home soon by Crowded House.mp3" },
-            { title: "6. Don't Dream It's Over", artist: "Neil Finn", src: "Neil Finn - Don't Dream It's Over (live with strings, Auckland 2015).mp3" },
-            { title: "7. CARPENTER SONGS", artist: "Ehllen Quezada", src: "THE BEST OF KAREN CARPENTER - Cover by Ehllen Quezada.mp3" },
-            { title: "8. I'LL STAND BY YOU", artist: "Ehllen Quezada", src: "I'LL STAND BY YOU   LYRICS  THE PRETENDERS  Cover by_ Ehllen Quezada.mp3" },
-            { title: "9. Maneater", artist: "Ehllen Quezada", src: "Maneater- No hard feelings OST Lyrics ( cover by ehllen quezada.mp3" },
-            { title: "10. HURT", artist: "Johnny Cash", src: "johnny cash - hurt (lyrics).mp3" },
-            { title: "11. Ordinary song", artist: "Ehllen Quezada", src: "Ordinary song-  Lyrics cover by ehllen quezada.mp3" },
-            { title: "12. Drops of Jupiter", artist: "Train", src: "Train - Drops of Jupiter (Lyrics).mp3" },
-            { title: "13. Stay Close, Don't Go", artist: "", src: "Stay Close, Don't Go - Secondhand Serenade - (Lyrics).mp3" },
-            { title: "14. Lose Control", artist: "Teddy Swims", src: "Teddy Swims - Lose Control (Lyrics).mp3" },
-            { title: "15. Say you won't let go", artist: "Ehllen Quezada", src: "82_s_0bca6532fbahweajy7odsnsfl5yaul5qo22a.f0 (mp3cut.net).mp3" },
-            { title: "16. When I Look At You", artist: "Miley Cyrus", src: "When I Look At You - Miley Cyrus (Lyrics).mp3" },
-            { title: "17. One tin soldier", artist: "Ehllen Quezada", src: "SongPeel-Reverb-Output (2).wav" },
-            { title: "18. Two Less Lonely People in the World", artist: "", src: "Air Supply - Two Less Lonely People in the World (Lyrics).mp3" },
-            { title: "19. Midnight City", artist: "M83", src: "M83 - Midnight City (Lyrics).mp3" },
-            { title: "20. Yesterday", artist: "Beatles", src: "Yesterday (Remastered 2009).mp3" },
-            { title: "21. How Deep Is Your Love", artist: "", src: "Bee Gees - How Deep Is Your Love [Lyrics].mp3" },
-            { title: "22. Hotel California", artist: "Eagles", src: "Hotel California (2013 Remaster).mp3" },
-            { title: "23. Stairway to Heaven", artist: "Led Zeppelin", src: "Stairway to Heaven (Remaster).mp3" },
-            { title: "24. Still Got The Blues", artist: "Garry Moore", src: "Still Got The Blues.mp3" },
-            { title: "25. More than you know", artist: "Garry Moore", src: "I Love You More Than You'll Ever Know.mp3" },
-            { title: "26. Sultans of Swing", artist: "Dire Straits", src: "Dire Straits - Sultans of Swing lyrics.mp3" },
-            { title: "27. As Late As The Hour May Be", artist: "", src: "As Late As The Hour May Be - Jimmy Radcliffe.mp3" },
-            { title: "28. Man Without Love", artist: "Engelbert ", src: "A Man Without Love LYRICS Video Engelbert Humperdinck 1968  Moon Knight Episode 1.mp3" },
-            { title: "29. Be My Baby", artist: "The Barberettes", src: "바버렛츠 The Barberettes - Be My Baby (Cover of The Ronettes) (mp3cut.net).mp3" },
-
-
-        
-        ];
-
-          let currentSongIndex = 0;
-
-let isAutoplayEnabled = false; // Variable to track autoplay status
-
-const audio = document.getElementById('audio');
-
-const songTitle = document.getElementById('song-title');
-
-
-function updateSong() {
-
-    audio.src = songs[currentSongIndex].src;
-
-    songTitle.textContent = `${songs[currentSongIndex].title} - ${songs[currentSongIndex].artist}`;
-
-    audio.load(); // Load the new song
-
+    border: 2px outset red;
 }
 
 
-// Play button
-
-document.getElementById('play-btn').addEventListener('click', () => {
-
-    audio.play();
-
-});
-
-
-// Pause button
-
-document.getElementById('pause-btn').addEventListener('click', () => {
-
-    audio.pause();
-
-});
-
-
-// Stop button
-
-document.getElementById('stop-btn').addEventListener('click', () => {
-
-    audio.pause();
-
-    audio.currentTime = 0;
-
-});
-
-
-// Next button
-
-document.getElementById('next-btn').addEventListener('click', () => {
-
-    currentSongIndex = (currentSongIndex + 1) % songs.length; // Loop back to the first song
-
-    updateSong();
-
-    audio.play(); // Automatically play the next song
-
-});
-
-
-// Previous button
-
-document.getElementById('prev-btn').addEventListener('click', () => {
-
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length; // Loop back to the last song
-
-    updateSong();
-
-    audio.play(); // Automatically play the previous song
-
-});
-
-
-// Autoplay button
-
-document.getElementById('autoplay-btn').addEventListener('click', () => {
-
-    isAutoplayEnabled = !isAutoplayEnabled; // Toggle autoplay status
-
-    document.getElementById('autoplay-btn').textContent = isAutoplayEnabled ? '🔁 Autoplay On' : '🔁 Autoplay Off'; // Update button text
-
-});
-
-
-// Event listener for when the song ends
-
-audio.addEventListener('ended', () => {
-
-    if (isAutoplayEnabled) {
-
-        currentSongIndex = (currentSongIndex + 1) % songs.length; // Move to the next song
-
-        updateSong();
-
-        audio.play(); // Automatically play the next song
-
-    }
-
-});
-
-
-// Initialize the first song
-
-updateSong();
-    </script>
 
 
 
 
 
-    </script>
+
+</style>
 
 
-    <div class="jump-to-song">
-        <label for="song-select">Jump to Song:</label>
+   <h1></h1> 
+<img src="paladin.png" alt="JB PALADIN" class="image-title" />
+
+
+
+ <div class="animated-text">" It's okay not 
+<br> to be okay "</div> 
+
+<div class="container">
+
+    <h3>🎼 Master's Playlist</h3>
+    <div class="current-song">
+        <h2 id="song-title">One Last Song - A1</h2>
+    </div>
+    <div class="controls">
+        <button id="play-btn">▶️</button>
+        <button id="pause-btn">⏸️</button>
+        <button id="stop-btn">⏹️</button>
+      
+    </div>
+    <div class="navigation">
+        <button id="prev-btn" class="small-button">⏮️ Previous</button>
+        <button id="next-btn" class="small-button">Next ⏭️</button>
+        <button id="autoplay-btn" class="small-button" style="margin-top: 10px;">🔁 Go Autoplay</button> <!-- New Autoplay Button -->
+    </div>
+</div>
+
+ 
+
+   <div class="jump-to-song">
+         <label for="song-select">Jump to Song:</label>
         <select id="song-select">
             <option value="0">1. A poem for you</option>
             <option value="1">2. The Road Not Taken</option>
@@ -374,17 +174,548 @@ updateSong();
             <option value="26">27. As the late as hour maybe </option>
             <option value="27">28. A Man Without Love </option>
             <option value="28">29. Be my baby </option>
-               </select>
+
+
+
+
+
+        </select>
     </div>
 
 
+
+
+<!-- Container for filter, volume, and slider -->
+<div class="controls-container">
+  <!-- Filter options -->
+  <div class="filter-options">
+    <label><input type="radio" name="song-filter" value="all" checked> Show All</label>
+    <label><input type="radio" name="song-filter" value="E"> E songs</label>
+    <label><input type="radio" name="song-filter" value="M"> M songs</label>
+  </div>
+  
+  <!-- Volume control -->
+ <div class="volume-control" style="display: flex; align-items: flex-start;">
+<img src="speaker.png" alt="Volume" title="Volume" style="cursor: pointer; width: 45px; height: auto; margin-top: -10px; margin-left: -10px;">
+   <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" style="width: 100px; margin-left: -5px; margin-top: 12px;">
+</div>
+  
+  <!-- Song seek slider -->
+<div class="song-slider-control" style="display: flex; align-items: center; margin-top: -20px;">
+ <img src="musicnotes.png" alt="Seek" title="Seek" style="width: 30px; height: auto; margin-right: 5px; cursor: pointer; margin-bottom: 20px; margin-left: -5px;">
+  <input type="range" id="song-slider" value="0" min="0" max="100" step="1" style="width: 100px; margin-left: -3px; margin-top: -20px;">
+</div>
+</div>
+
+
+
+
+
+
+
+    <audio id="audio" src="Brad Paisley - She's Everything (Lyrics).mp3"></audio>
+
+
+<script>
+
+const volumeSlider = document.getElementById('volume-slider');
+const songSlider = document.getElementById('song-slider');
+// Update the slider as the song plays
+audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+        const value = (audio.currentTime / audio.duration) * 100; // Calculate percentage
+        songSlider.value = value; // Update slider value
+    }
+});
+// Seek to the selected position when the slider is changed
+songSlider.addEventListener('input', () => {
+    const newTime = (songSlider.value / 100) * audio.duration; // Calculate new time
+    audio.currentTime = newTime; // Update audio current time
+});
+
+
+// Set initial volume
+audio.volume = volumeSlider.value;
+// Update audio volume when slider changes
+volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value;
+});
+
+
+</script>
+
+
+
+
+
+<script>
+const songs = [
+    { id: "E", title: "1. A poem for you", artist: "Ehllen Quezada", src: "A poem for you (mp3cut.net).mp3" },
+    { id: "E", title: "2. The Road Not Taken", artist: "Robert Frost", src: "The Road Not Taken, by Robert Frost (HD).mp3" },
+    { id: "E", title: "3. Canon in D", artist: "Brooklyn Duo", src: "Canon in D (Pachelbel's Canon) - Cello & Piano [BEST WEDDING VERSION].mp3" },
+    { id: "E", title: "4. For The First Time", artist: "Kenny Loggins", src: "Kenny Loggins - For The First Time (Official Video).mp3" },
+    { id: "E", title: "5. Better be home soon", artist: "Crowded House", src: "Better be home soon by Crowded House.mp3" },
+    { id: "E", title: "6. Don't Dream It's Over", artist: "Neil Finn", src: "Neil Finn - Don't Dream It's Over (live with strings, Auckland 2015).mp3" },
+    { id: "E", title: "7. CARPENTER SONGS", artist: "Ehllen Quezada", src: "THE BEST OF KAREN CARPENTER - Cover by Ehllen Quezada.mp3" },
+    { id: "E", title: "8. I'LL STAND BY YOU", artist: "Ehllen Quezada", src: "I'LL STAND BY YOU   LYRICS  THE PRETENDERS  Cover by_ Ehllen Quezada.mp3" },
+    { id: "E", title: "9. Maneater", artist: "Ehllen Quezada", src: "Maneater- No hard feelings OST Lyrics ( cover by ehllen quezada.mp3" },
+    { id: "E", title: "10. HURT", artist: "Johnny Cash", src: "johnny cash - hurt (lyrics).mp3" },
+    { id: "E", title: "11. Ordinary song", artist: "Ehllen Quezada", src: "Ordinary song-  Lyrics cover by ehllen quezada.mp3" },
+    { id: "E", title: "12. Drops of Jupiter", artist: "Train", src: "Train - Drops of Jupiter (Lyrics).mp3" },
+    { id: "E", title: "13. Stay Close, Don't Go", artist: "", src: "Stay Close, Don't Go - Secondhand Serenade - (Lyrics).mp3" },
+    { id: "E", title: "14. Lose Control", artist: "Teddy Swims", src: "Teddy Swims - Lose Control (Lyrics).mp3" },
+    { id: "E", title: "15. Say you won't let go", artist: "Ehllen Quezada", src: "82_s_0bca6532fbahweajy7odsnsfl5yaul5qo22a.f0 (mp3cut.net).mp3" },
+    { id: "E", title: "16. When I Look At You", artist: "Miley Cyrus", src: "When I Look At You - Miley Cyrus (Lyrics).mp3" },
+    { id: "M", title: "17. One tin soldier", artist: "Ehllen Quezada", src: "SongPeel-Reverb-Output (2).wav" },
+    { id: "E", title: "18. Two Less Lonely People in the World", artist: "", src: "Air Supply - Two Less Lonely People in the World (Lyrics).mp3" },
+    { id: "E", title: "19. Midnight City", artist: "M83", src: "M83 - Midnight City (Lyrics).mp3" },
+    { id: "E", title: "20. Yesterday", artist: "Beatles", src: "Yesterday (Remastered 2009).mp3" },
+    { id: "M", title: "21. How Deep Is Your Love", artist: "", src: "Bee Gees - How Deep Is Your Love [Lyrics].mp3" },
+    { id: "E", title: "22. Hotel California", artist: "Eagles", src: "Hotel California (2013 Remaster).mp3" },
+    { id: "E", title: "23. Stairway to Heaven", artist: "Led Zeppelin", src: "Stairway to Heaven (Remaster).mp3" },
+    { id: "E", title: "24. Still Got The Blues", artist: "Garry Moore", src: "Still Got The Blues.mp3" },
+    { id: "E", title: "25. More than you know", artist: "Garry Moore", src: "I Love You More Than You'll Ever Know.mp3" },
+    { id: "E", title: "26. Sultans of Swing", artist: "Dire Straits", src: "Dire Straits - Sultans of Swing lyrics.mp3" },
+    { id: "E", title: "27. As Late As The Hour May Be", artist: "", src: "As Late As The Hour May Be - Jimmy Radcliffe.mp3" },
+    { id: "E", title: "28. Man Without Love", artist: "Engelbert ", src: "A Man Without Love LYRICS Video Engelbert Humperdinck 1968  Moon Knight Episode 1.mp3" },
+    { id: "E", title: "29. Be My Baby", artist: "The Barberettes", src: "바버렛츠 The Barberettes - Be My Baby (Cover of The Ronettes) (mp3cut.net).mp3" }
+];
+    let currentSongIndex = 0;
+    let isAutoplayEnabled = false;
+    let filteredSongs = []; // Array to hold the currently filtered songs
+
+    const audio = document.getElementById('audio');
+    const songTitle = document.getElementById('song-title');
+    const songSelect = document.getElementById('song-select');
+    const filterRadios = document.querySelectorAll('input[name="song-filter"]');
+
+    // Function to populate the dropdown based on the filtered songs
+    function populateSongSelect(songsToDisplay) {
+        songSelect.innerHTML = ''; // Clear existing options
+        songsToDisplay.forEach((song, index) => {
+            const option = document.createElement('option');
+            option.value = index; // Use the index in the *filtered* array
+            option.textContent = `${song.title}`; // Display the song title
+            songSelect.appendChild(option);
+        });
+    }
+
+    // Function to filter songs based on the selected radio button
+    function filterSongs(filterValue) {
+        if (filterValue === 'all') {
+            filteredSongs = songs;
+        } else {
+            filteredSongs = songs.filter(song => song.id === filterValue);
+        }
+        populateSongSelect(filteredSongs);
+        // After filtering, if the current song is no longer in the filtered list,
+        // reset to the first song in the filtered list.
+        const currentSongInFiltered = filteredSongs.find(song => song.src === audio.src);
+        if (!currentSongInFiltered && filteredSongs.length > 0) {
+             currentSongIndex = 0; // Reset index to the first song in the filtered list
+             updateSong(); // Update the displayed song and audio source
+        } else if (currentSongInFiltered) {
+            // Update the currentSongIndex to match the index in the filtered list
+            currentSongIndex = filteredSongs.indexOf(currentSongInFiltered);
+        } else {
+             // If no songs match the filter, clear the current song
+             currentSongIndex = -1; // Indicate no song is selected
+             songTitle.textContent = "No songs match filter";
+             audio.src = ""; // Clear audio source
+        }
+    }
+
+    function updateSong() {
+        if (currentSongIndex >= 0 && currentSongIndex < filteredSongs.length) {
+            const currentSong = filteredSongs[currentSongIndex];
+            audio.src = currentSong.src;
+            songTitle.textContent = `${currentSong.title} - ${currentSong.artist}`;
+            audio.load(); // Load the new song
+            // Update the dropdown to show the currently playing song
+            songSelect.value = currentSongIndex;
+        } else {
+            songTitle.textContent = "No song selected";
+            audio.src = "";
+        }
+    }
+
+    // Play button
+    document.getElementById('play-btn').addEventListener('click', () => {
+        if (audio.src) { // Only play if there's a source
+            audio.play();
+        }
+    });
+
+    // Pause button
+    document.getElementById('pause-btn').addEventListener('click', () => {
+        audio.pause();
+    });
+
+    // Stop button
+    document.getElementById('stop-btn').addEventListener('click', () => {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+
+    // Next button
+    document.getElementById('next-btn').addEventListener('click', () => {
+        if (filteredSongs.length > 0) {
+            currentSongIndex = (currentSongIndex + 1) % filteredSongs.length;
+            updateSong();
+            audio.play();
+        }
+    });
+
+    // Previous button
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        if (filteredSongs.length > 0) {
+            currentSongIndex = (currentSongIndex - 1 + filteredSongs.length) % filteredSongs.length;
+            updateSong();
+            audio.play();
+        }
+    });
+
+    // Autoplay button
+    document.getElementById('autoplay-btn').addEventListener('click', () => {
+        isAutoplayEnabled = !isAutoplayEnabled;
+        document.getElementById('autoplay-btn').textContent = isAutoplayEnabled ? '🔁 Autoplay On' : '🔁 Autoplay Off';
+    });
+
+    // Event listener for when the song ends
+    audio.addEventListener('ended', () => {
+        if (isAutoplayEnabled && filteredSongs.length > 0) {
+            currentSongIndex = (currentSongIndex + 1) % filteredSongs.length;
+            updateSong();
+            audio.play();
+        }
+    });
+
+    // Event listener for the song select dropdown
+    songSelect.addEventListener('change', function() {
+        currentSongIndex = parseInt(this.value); // Get the index from the filtered list
+        updateSong(); // Update the song display and audio source
+        audio.play(); // Automatically play the selected song
+    });
+
+    // Add event listeners to the filter radio buttons
+    filterRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            filterSongs(this.value);
+            // After filtering, update the displayed song to the first in the new list
+            if (filteredSongs.length > 0) {
+                 currentSongIndex = 0;
+                 updateSong();
+            } else {
+                 currentSongIndex = -1; // No songs in the filtered list
+                 updateSong(); // Clear the display
+            }
+        });
+    });
+
+    // Initialize the filtered songs and populate the dropdown on page load
+    filterSongs('all');
+    // Initialize the first song from the initially filtered list
+    if (filteredSongs.length > 0) {
+        updateSong();
+    }
+
+</script>
+
+
+
+
+
+
+
+<style>
+.controls-container {
+    position: fixed;
+    top: 470px; /* Adjust based on your layout; ensure it's below the jump-to-song dropdown */
+    left: 50px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    gap: 10px; /* Space between elements */
+    z-index: 5; /* Keep below other overlays if needed */
+    background-color: transparent; /* Optional: background for clarity */
+}
+
+
+   #song-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 200px;
+    height: 2px; /* base height, can adjust */
+  }
+
+  /* WebKit browsers (Chrome, Safari, Edge) */
+  #song-slider::-webkit-slider-runnable-track {
+    background: darkred; /* Track color */
+    height: 2px; /* Track height */
+    border-radius: 2px;
+  }
+  #song-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 9px; /* Thumb size */
+    width: 8px;
+    background: red; /* Thumb color */
+    border-radius: 0;
+    cursor: pointer;
+    margin-top: -4px; /* Align thumb vertically with track */
+  }
+
+  /* Firefox */
+  #song-slider::-moz-range-track {
+    background: darkred; /* Track color */
+    height: 4px;
+    border-radius: 2px;
+  }
+  #song-slider::-moz-range-thumb {
+    height: 12px;
+    width: 12px;
+    background:  red; /* Thumb color */
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  /* IE / Edge legacy */
+  #song-slider::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    height: 4px;
+  }
+  #song-slider::-ms-thumb {
+    height: 12px;
+    width: 12px;
+    background: darkred; /* Thumb color */
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+
+ /* WebKit browsers (Chrome, Safari, Edge) */
+#volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px; /* your slider width */
+  height: 2px; /* fallback height */
+}
+#volume-slider::-webkit-slider-runnable-track {
+  height: 2px; /* thinner track */
+  background: darkred; /* your track color */
+  border-radius: 2px;
+}
+#volume-slider::-webkit-slider-thumb {
+  height: 9px; /* size of thumb */
+  width: 8px;
+  margin-top: -4px; /* to align vertically, adjust as needed */
+  background: red; /* thumb color */
+  /* remove border-radius for square shape */
+  border-radius: 0; /* or simply omit this line */
+  cursor: pointer;
+  -webkit-appearance: none; /* remove default styling */
+  appearance: none;
+}
+
+/* Firefox */
+#volume-slider::-moz-range-track {
+  height: 2px; /* thinner track */
+  background: darkred; /* your track color */
+  border-radius: 2px;
+}
+#volume-slider::-moz-range-thumb {
+   height: 9px; /* size of thumb */
+  width: 8px;
+  margin-top: -4px; /* to align vertically, adjust as needed */
+  background: red; /* thumb color */
+  /* remove border-radius for square shape */
+  border-radius: 0; /* or simply omit this line */
+  cursor: pointer;
+}
+
+/* IE / Edge legacy */
+#volume-slider::-ms-track {
+  height: 2px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+#volume-slider::-ms-thumb {
+  height: 9px; /* size of thumb */
+  width: 8px;
+  margin-top: -4px; /* to align vertically, adjust as needed */
+  background: darkred; /* thumb color */
+  /* remove border-radius for square shape */
+  border-radius: 0; /* or simply omit this line */
+  cursor: pointer;
+}
+</style>
+
+
+
+
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            background-color: white;
+            color: white;
+            margin: 0;
+            padding: 10px;
+        }
+
+ 
+
+.container {
+    text-align: left; /* Align text to the left */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    position: fixed; /* Position the container absolutely */
+    top: 110px; /* Adjust this value to move it down */
+    left: 20px; /* Distance from the left */
+    width: 320px; /* Set a fixed width */
+    height: 210px; /* Set a fixed height */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.current-song h2 {
+    white-space: normal; /* Allow text to wrap */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    max-height: 2.5em; /* Limit height to 2 lines (approximately) */
+    line-height: 1.3em; /* Set line height */
+}
+
+        .controls, .navigation {
+            margin: 20px 0;
+        }
+
+        
+
+
+
+
+        button {
+            background: linear-gradient(135deg, #000000, #222);
+            color: white;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            padding: 12px 22px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 0 10px rgba(255, 0, 0, 0.3),
+                0 0 20px rgba(255, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            animation: glow 1.5s infinite alternate;
+            transform: translateY(-3px);
+            box-shadow: 
+                0 0 20px rgba(255, 0, 0, 0.4),
+                0 0 30px rgba(255, 0, 0, 0.3),
+                0 0 40px rgba(255, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+            animation: none;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 
+                    0 0 10px rgba(255, 0, 0, 0.5),
+                    0 0 20px rgba(255, 0, 0, 0.4),
+                    0 0 30px rgba(255, 0, 0, 0.3);
+                border-color: #ff0000;
+            }
+            50% {
+                box-shadow: 
+                    0 0 15px rgba(255, 0, 0, 0.6),
+                    0 0 25px rgba(255, 0, 0, 0.5),
+                    0 0 35px rgba(255, 0, 0, 0.4);
+                border-color: #ff3333;
+            }
+            100% {
+                box-shadow: 
+                    0 0 20px rgba(255, 0, 0, 0.7),
+                    0 0 30px rgba(255, 0, 0, 0.6),
+                    0 0 40px rgba(255, 0, 0, 0.5);
+                border-color: #ff6666;
+            }
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,0,0,0.1) 0%, rgba(255,0,0,0) 70%);
+            transform: rotate(0deg);
+            transition: all 0.5s ease;
+        }
+
+        button:hover::before {
+            transform: rotate(180deg);
+        }
+   
+
+
+.small-button {
+    padding: 8px 8px; /* Adjust padding to make buttons smaller */
+    font-size: 9px; /* Adjust font size */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Optional: add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+    </style>
+
+
+
+    </style>
+
+ 
 <style>
 
+
+.filter-options {
+    /* You might need to experiment with position: relative; or absolute; */
+    position: fixed; /* Or absolute */
+    top: 425px; /* Adjust this value to be below the fixed jump-to-song */
+    left: 50px; /* Align horizontally with jump-to-song if needed */
+    color: white;
+    z-index: 5; /* Ensure it's below jump-to-song if needed */
+}
+
+.filter-options label {
+    margin-right: 15px;
+    font-size: 10px;
+}
+
+.jump-to-song select {
+    width: 240px; 
+}
 .jump-to-song {
-    top: 350px; /* Increase space above the dropdown to move it down */
+    top: 380px; /* Increase space above the dropdown to move it down */
+    left: 50px; /* Move it to the right corner (adjust this value to move it right) */
     text-align: left; /* Align the dropdown to the left */
     z-index: 10; /* Ensure it appears above other elements */
-    margin-right: 1000px; /* Optional: Adjust this value to move it away from the left edge */
     position: fixed;
 }
 
@@ -395,14 +726,6 @@ updateSong();
 }
 
 </style>
-<script>
-document.getElementById('song-select').addEventListener('change', function() {
-    currentSongIndex = parseInt(this.value); // Get the selected song index
-    updateSong(); // Update the song display
-    audio.play(); // Automatically play the selected song
-});
-
-</script>
 
 
 
@@ -410,39 +733,17 @@ document.getElementById('song-select').addEventListener('change', function() {
 
 
 
-  
 
-    <script>
-        function playAudio(songId, button) {
-            const audio = document.getElementById(songId);
-            audio.play();
-            setActiveButton(button);
-        }
 
-        function pauseAudio(songId, button) {
-            const audio = document.getElementById(songId);
-            audio.pause();
-            setActiveButton(button);
-        }
 
-        function stopAudio(songId, button) {
-            const audio = document.getElementById(songId);
-            audio.pause();
-            audio.currentTime = 0; // Reset to the beginning
-            setActiveButton(button);
-        }
 
-        function setActiveButton(activeButton) {
-            // Get all buttons in the document
-            const buttons = document.querySelectorAll('button');
-            buttons.forEach(button => {
-                // Remove the active class from all buttons
-                button.classList.remove('active');
-            });
-            // Add the active class to the clicked button
-            activeButton.classList.add('active');
-        }
-    </script>
+
+
+
+
+
+
+
 
 
 
@@ -569,33 +870,34 @@ document.getElementById('song-select').addEventListener('change', function() {
             cursor: pointer;
         }
 
-/* Keyframe animation for slow bouncing effect */
-@keyframes slowBounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-8px); /* Move up */
-    }
-    60% {
-        transform: translateY(-5px); /* Move down slightly */
-    }
-}
+  
 
 /* Style for the image */
 .love-letter img {
     cursor: pointer; /* Change to pointer */
-    width: 130px; /* Set a width for the image */
-    height: 100px; /* Maintain aspect ratio */
-    margin-bottom: -40px; /* Adjust this value to move the image up */
+    width: 105px; /* Set a width for the image */
+    height: 85px; /* Maintain aspect ratio */
+    margin-bottom: -25px; /* Adjust this value to move the image up */
     animation: slowBounce 2s infinite; /* Apply the slow bounce animation */
 }
+
+
     </style>
 </head>
 <body>
 
+
+
+
+
+
+
+
+
+
+
 <div class="love-letter">
-    <img src="letter.png" alt="Love Letter" />
+    <img src="letter.webp" alt="Love Letter" />
 </div>
 
 <div id="greetingModal" class="modal">
@@ -603,145 +905,19 @@ document.getElementById('song-select').addEventListener('change', function() {
         <span class="close-button" onclick="closeModal()">&times;</span>
 
 
-    <h2> "A poem for you" </h2>
-    <p>
-
-<br>As quiet as a mouse I am,
-<br>
-and yet I found my comfort in you,
-<br>
-Your love is one of a kind, and I am
-<br>
-so lucky I have met you.
 
 <br>
-I am just an ordinary girl, 
-<br>
-just thought superficial,
-<br>
-But you see what's inside my eyes
-<br>
-No one treats me like a special
-<br>
-At times, my heart dances to a different tune
-<br>
-You dance with me—
-<br>
-You know the melody of my soul
-<br>
-You know every beat of me.
-<br>
-When I'm with you I'm not wearing my mask
-<br>
-I don't care being naked— nor being judge by the rest.
-<br>
-More and more, I was dazzled by you
-<br>
-Words unspoken, I wish I could tell you everyday.
-<br>
-You are my unveiled compass, now I'm no longer lost—
-<br>
-
-    </p>
-    <p> ~ehllenquezada </p>
+  <h2> Hi, Master</h2>   
+ <p> I hope you like the poem, Let me know what your thoughts & understanding about this.
+kindly reply to my email.🌻
+ hehe </p>
 
 
 
 
         
-        <h2> MUAH </h2>
-        <p> Stay strong Master, Have faith in God and surrender all your worries to him
-        I know we can finished this APPLE and we can fixed issue with GOOGLE.💞 </p>
-          <h2>Have an uplifting friday Jeff!</h2>   <h5> 02/01/2025</h5>
-            <p> 
-I hope you start your day with a smile. 🙂
-Just want to remind you 
-
-You're like a BAOBAB TREE.. Strong and resilient no storm can break you—
-
-You are UNBREAKABLE.. Life hits you hard but
-you manage to overcome each obstacles. 
 
 
-You are never alone in this world, GOD is with you.
-He sees you, He hears you and He is watching you 
-everyday.   Come to him and pray and
-surrender all your worries.
-
-
-You are a good person, Be an inspiration to all and NEVER GIVE UP.  Storms will pass.  
-There's a light at the end of the tunnel.
-
-Good things will come. Be hopeful.
-
-I hope this lightens up your day.𓇢𓆸
-
-<br>
-Love,
-<br>
-Elle
-</p>
-
-<h2> It's a positive friday Dear Jeff! </h2>
-  <h5> 02/07/2025</h5>
-<p>
-How are you?  I hope you are doing well,
-
-I just want to remind you that you are special.
-A man with words of wisdom...
-
-I always love listening to you. I like when you are being open to me.
-
-I like when you are sharing your life experiences with me. I feel valued and trusted. So thank you and I appreciate that.
-
-
-Things that I like/love about you:
-
-
-You are kindhearted, you have a heart of gold.  When you love people, you always treat them special. Never failed to show/express your love.  
-
-
-You love giving gifts, whether big or small....
-It's the thought that counts as people said.
-
-💚
-
-I just want to remind you its not wrong to choose yourself first sometimes..
-Buy something nice for yourself. Or go somewhere nice. Have a short vacation.
-A nature trip is good.
-
-I hope you give the same amount of love for yourself just like you gave for other people.
-
-Be more kind and loving to yourself.
-
-Live happy and live healthy...
-remove toxic things in your life. Stay away from toxic people. 
-
-You are very strong.  Very strong Man on earth.  Don't lose your sight.
-
-God has better plans for you. 
-
-
-Thank you for being part of my life, my journey.  Because of you.
-
-My life has changed.  Getting better and better.  Thank you for being my motivation.
-
-Thank you for teaching me what real love is..
-
-its Unconditional... you have shown me unconditional love. I am lucky to experience that.   For years, you never failed.. never failed to show me that you love me.
-Thank you.. and I love you too.
-
-
-Warms hugs from me.
-
-You are not alone anymore.
-
-I want you to live longer. Have a healthy lifestyle. Eat healthy. 💋
-<br>
-Love,
-<br>
-Elle
-</p>
     </div>
 </div>
 
@@ -760,46 +936,272 @@ Elle
     document.querySelector('.love-letter img').addEventListener('click', openModal);
 </script>
 
-
 <div class="icon-container">
-    <img src="quiz.png" alt="Quiz Icon" class="quiz" onclick="showMessage()">
-    <img src="cam.png" alt="Photo Icon" class="gallery" onclick="showMessage()">
+    <div class="icon-wrapper"><img src="quiz.png" alt="Quiz Icon" class="quiz" onclick="showMessage()"></div>
+    <div class="icon-wrapper"><img src="cam.png" alt="Photo Icon" class="gallery" onclick="showMessage()"></div>
+    <div class="icon-wrapper"><img src="clock.png" alt="Clock Icon" class="clock"></div>
+    <div class="icon-wrapper"> <img src="poem.png" alt="Poetry Icon" class="poetry" onclick="openPoemTable()"></div>
+
 </div>
+
+
+
+<!-- Poem Table -->
+<div id="poemTable" class="poem-table" style="display: none;">
+    <div class="table-content">
+   <span class="close" onclick="closePoemTable()" style="position: absolute; top: 2px; right: 15px; color: #aaa; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+        <h2 id="poemTitle">THE NIGHT, I REMEMBERED WHO LIORA WAS</h2>
+        <h4>Poem written by: Ehllen Quezada</h4>
+
+        <div id="poemText"></div>
+        <div class="navigation">
+        <div class="poem-prev" onclick="changePoem(-1)">Previous</div>
+        <div class="poem-next" onclick="changePoem(1)">Next</div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+const poems = [
+    {
+        title: "THE NIGHT, I REMEMBERED WHO LIORA WAS",
+        text: [
+            "In the moonless night, with my feet cold,",
+            "Wearing flowing white satin dress—",
+            "I found myself walking an endless shore.",
+            "In mystic depths, I gently press.",
+            "An enchanting feeling— here, I never get old,",
+            "And the waves? Oh, they hum names I knew before.",
+            "",
+            "And as I move along, I see the figure of a man from afar,",
+            "His face— Oh, his face— was hidden by the shadows.",
+            "And so, I became a ghost— haunting this man,",
+            "Yet somehow, time and space keep us so far.",
+            "Then lightning strikes, thunder roars,",
+            "Across my face, a restless wind blows.",
+            "And here and there, his true nature shows—",
+            "",
+            "He is a knight!",
+            "He appears to me, in gleaming armor bright.",
+            "Standing tall— steady, silent, forged in fight.",
+            "Though his eyes— his eyes carry the land's slide’s groans—",
+            "Yet he reaches for my hands, with his battle-scarred hands.",
+            "As like hope renewing tones—",
+            "",
+            "As like comets colliding in our eyes,",
+            "And it feels like my wandering soul— finds its peace,",
+            "in the soft night breeze.",
+            "As like the waves knew my name that I'd forgotten— for so long",
+            "",
+            "And then his mouth whispers my name— 'LIORA'",
+            "And it echoes from the depths of the seas— like a timeless song.",
+            "From moonless night, to the moon’s bright aura.",
+            "He shed his armor bright.",
+            "My eyes fell upon his hundred wounds— bathed in a silver light.",
+            "",
+            "His bleeding wounds I long to heal,",
+            "to save him from the final seal.",
+            "And as I gazed upon his wounds, I saw my own—",
+            "Scars I buried for so long—",
+            "Perhaps, I still leave a mark to be shown.",
+            "But this knight I saw worn and pressed,",
+            "Will find with me his long-sought rest—",
+            "If only he would leave death’s cold crest.",
+            "",
+            "And so, I called the God of Seas,",
+            "To weave our souls in sacred keys.",
+            "And in that moment, I was finally free—",
+            "The haunting was never outside,",
+            "But within me—",
+            "Oh Liora— was me",
+            "The ghost that I chased— was me all along.",
+            ""
+        ],
+        date: "June 29, 2025"
+    },
+    {
+        title: "A POEM FOR YOU 🌻",
+        text: [
+            "As quiet as a mouse I am,",
+            "and yet I found my comfort in you,",
+            "Your love is one of a kind, and I am",
+            "so lucky I have met you.",
+            "",
+            "I am just an ordinary girl,",
+            "just thought superficial,",
+            "But you see what's inside my eyes",
+            "No one treats me like a special.",
+            "",
+            "At times, my heart dances to a different tune",
+            "You dance with me—",
+            "You know the melody of my soul",
+            "You know every beat of me.",
+            "",
+            "When I'm with you I'm not wearing my mask",
+            "I don't care being naked— nor being judged by the rest.",
+            "More and more, I was dazzled by you."
+        ],
+        date: "February 14, 2025"
+    }
+];
+
+let currentPoemIndex = 0;
+
+function openPoemTable() {
+    document.getElementById('poemTable').style.display = 'block'; // Show the table
+    showPoem(currentPoemIndex); // Show the first poem
+}
+
+function closePoemTable() {
+    document.getElementById('poemTable').style.display = 'none'; // Hide the table
+}
+
+function showPoem(index) {
+    const poemTitle = document.getElementById('poemTitle');
+    const poemText = document.getElementById('poemText');
+    
+    poemTitle.innerHTML = poems[index].title;
+    poemText.innerHTML = poems[index].text.join('<br>'); // Join lines with line breaks
+}
+
+function changePoem(direction) {
+    currentPoemIndex += direction; // Update the index based on direction
+    if (currentPoemIndex < 0) {
+        currentPoemIndex = 0; // Prevent going below the first poem
+    } else if (currentPoemIndex >= poems.length) {
+        currentPoemIndex = poems.length - 1; // Prevent going above the last poem
+    }
+    showPoem(currentPoemIndex); // Show the updated poem
+}
+
+
+</script>
+
+<style>
+.poem-table {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: beige;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 20px;
+    width: 565px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+   font-size: 15px;
+}
+
+.table-content {
+    text-align: center;
+    color: black; /* All text inside will be black */
+}
+
+.poem-prev, .poem-next {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: beige;
+  color: black;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.poem-prev:hover, .poem-next:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Active (click) effect */
+.poem-prev:active, .poem-next:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+  transition: none;
+}
+
+</style>
+
+
+
+
+
+
+
+
 
 <style>
   .icon-container {
-            display: flex;
-            justify-content: center; /* Center the icons horizontally */
-            align-items: center; /* Center the icons vertically */
-            position: fixed; /* Fix the position to the bottom */
-            bottom: 10px; /* Distance from the bottom of the page */
-            left: 50%; /* Center the container horizontally */
-            transform: translateX(-50%); /* Adjust to center the container */
-            gap: 10px; /* Space between icons */
-            z-index: 10; /* Ensure it appears above other elements */
-        }
+    display: flex;
+    justify-content: center; /* Center the group horizontally */
+    align-items: center;     /* Center items vertically within container */
+    position: fixed;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 20px; /* consistent space between icons */
+    z-index: 10;
+  }
 
-        .quiz {
-    width: 60px; /* Set the width of the icons */
-    height: 50px; /* Set the height of the icons */
-    margin-top: 10px; 
+  /* Optional: ensure all icons are aligned and sized uniformly */
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Set a fixed size or min/max if needed */
+  }
+
+  /* Size for each icon, adjust as needed for consistency */
+  .quiz {
+    width: 60px;
+    height: auto; /* maintain aspect ratio if needed */
+    max-height: 50px; /* optional: limit height */
+  }
+
+  .gallery {
+    width: 60px;
+    height: auto; /* maintain aspect ratio if needed */
+    max-height: 70px; /* optional: limit height */
+  }
+  .poetry {
+    width: 60px;
+    height: auto; /* maintain aspect ratio if needed */
+    max-height: 40px; /* optional: limit height */
+
+  }
+
+.poetry:hover {
+    transform: scale(1.3);
+    transition: transform 0.2s ease;
 }
 
+  .clock {
+    width: 35px;
+    height: auto;
+    max-height: 35px;
+  }
 
-.quiz:hover {
-    transform: scale(1.3); /* Slightly enlarge the image on hover */
-}
-        .gallery {
-            width: 60px; /* Set the width of the icons */
-            height: 60px; /* Set the height of the icons */
-            margin-top: 15px;
-        }
+  /* Enlarge icons on hover for all */
+  .quiz:hover,
+  .gallery:hover,
+  .clock:hover {
+    transform: scale(1.3);
+    transition: transform 0.2s ease;
+  }
 
-.gallery:hover {
-    transform: scale(1.3); /* Slightly enlarge the image on hover */
-}
-
-
+  /* Optional: add transition for smooth scaling */
+  .icon-wrapper img {
+    transition: transform 0.2s ease;
+    display: block;
+  }
 </style>
 
 
@@ -811,6 +1213,111 @@ Elle
 </script>
 
 
+<style>
+    .textbox {
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Distance from the bottom of the page */
+        right: 20px; /* Distance from the right of the page */
+        width: 300px; /* Fixed width for the textbox */
+        height: 120px; /* Fixed height for the textbox */
+        border-radius: 10px; /* Rounded corners */
+        padding: 20px; /* Padding inside the textbox */
+        background-color: none; /* Background color of the textbox */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        text-align: center; /* Center text inside the textbox */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+    .Master {
+        font-size: 22px;
+        font-family: calibri;
+        color: beige;
+        margin: 20px 0;
+        transition: opacity 0.5s ease;
+    }
+    #author {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+</style>
+
+<div class="textbox">
+    <div class="Master" id="poemLine"></div>
+    <div id="author"></div>
+</div>
+
+<script>
+    // Array of poem lines
+    const poemLines = [
+        "In the moonless night, with my feet cold,",
+        "Wearing flowing white satin dress—",
+        "I found myself walking an endless shore.",
+        "In mystic depths, I gently press.",
+        "An enchanting feeling— here, I never get old,",
+        "And the waves? Oh, they hum names I knew before.",
+        "And as I move along, I see the figure of a man from afar,",
+        "His face— Oh, his face— was hidden by the shadows.",
+        "And so, I became a ghost— haunting this man,",
+        "Yet somehow, time and space keep us so far.",
+        "Then lightning strikes, thunder roars,",
+        "Across my face, a restless wind blows.",
+        "And here and there, his true nature shows—",
+        "He is a knight!",
+        "He appears to me, in gleaming armor bright.",
+        "Standing tall— steady, silent, forged in fight.",
+        "Though his eyes— his eyes carry the land's slide’s groans—",
+        "Yet he reaches for my hands, with his battle-scarred hands.",
+        "As like hope renewing tones—",
+        "As like comets colliding in our eyes,",
+        "And it feels like my wandering soul— finds its peace,",
+        "in the soft night breeze.",
+        "As like the waves knew my name that I'd forgotten— for so long",
+        "And then his mouth whispers my name— 'LIORA'",
+        "And it echoes from the depths of the seas— like a timeless song.",
+        "From moonless night, to the moon’s bright aura.",
+        "He shed his armor bright.",
+        "My eyes fell upon his hundred wounds— bathed in a silver light.",
+        "His bleeding wounds I long to heal,",
+        "to save him from the final seal.",
+        "And as I gazed upon his wounds, I saw my own—",
+        "Scars I buried for so long—",
+        "Perhaps, I still leave a mark to be shown.",
+        "But this knight I saw worn and pressed,",
+        "Will find with me his long-sought rest—",
+        "If only he would leave death’s cold crest.",
+        "And so, I called the God of Seas,",
+        "To weave our souls in sacred keys.",
+        "And in that moment, I was finally free—",
+        "The haunting was never outside,",
+        "But within me—",
+        "Oh Liora— was me",
+        "The ghost that I chased— was me all along.",
+        "The night, I remembered who Liora was",
+        "A poem written by: Ehllen Quezada",
+        "Finished date: 06/29/2025",
+    ];
+
+    let currentLineIndex = 0;
+
+    function displayLine() {
+        const lineElement = document.getElementById('poemLine');
+        lineElement.innerHTML = poemLines[currentLineIndex];
+    }
+
+    function advanceLine() {
+        currentLineIndex++;
+        if (currentLineIndex >= poemLines.length) {
+            // Restart from the beginning or stop
+            currentLineIndex = 0;
+        }
+        displayLine();
+    }
+
+    // Show the first line initially
+    displayLine();
+
+    // Change the line every 5 seconds
+    setInterval(advanceLine, 5000);
+</script>
 
 </body>
 </html>
