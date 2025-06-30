@@ -947,7 +947,7 @@ kindly reply to my email.🌻
 </script>
 
 <div class="icon-container">
-    <div class="icon-wrapper"><img src="quiz.png" alt="Quiz Icon" class="quiz" onclick="showMessage()"></div>
+    <div class="icon-wrapper"><img src="quiz.png" alt="Quiz Icon" class="quiz" onclick="openQuiz()"></div>
     <div class="icon-wrapper"><img src="cam.png" alt="Photo Icon" class="gallery" onclick="showMessage()"></div>
     <div class="icon-wrapper"><img src="clock.png" alt="Clock Icon" class="clock"></div>
     <div class="icon-wrapper"> <img src="poem.png" alt="Poetry Icon" class="poetry" onclick="openPoemTable()"></div>
@@ -960,14 +960,15 @@ kindly reply to my email.🌻
 <div id="poemTable" class="poem-table" style="display: none;">
     <div class="table-content">
         <span class="close" onclick="closePoemTable()" style="position: absolute; top: 2px; right: 15px; color: #aaa; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
-       <h2 id="poemTitle" style="color: #f34e1f;">THE NIGHT, I REMEMBERED WHO LIORA WAS</h2>
-<h4 style="color: #f34e1f;">Poem written by: Ehllen Quezada</h4>
+       <h2 id="poemTitle" style="color: #ca3c25;">THE NIGHT, I REMEMBERED WHO LIORA WAS</h2>
+<h4 style="color: #ca3c25;">Poem written by: Ehllen Quezada</h4>
 
         <div id="poemText"></div>
         <div class="navigation">
             <div class="poem-prev" onclick="changePoem(-1)">Previous</div>
             <div class="poem-next" onclick="changePoem(1)">Next</div>
         </div>
+<div id="pageCount" style="margin-top:10px; font-weight:bold; text-align:center;"> </div>
     </div>
 </div>
 
@@ -1094,6 +1095,24 @@ function changePoem(direction) {
         poemText.classList.remove('fade-out'); // Fade in new poem
     }, 300); // Match this timeout with the CSS transition duration
 }
+
+
+
+function showPoem(index) {
+    const poemTitle = document.getElementById('poemTitle');
+    const poemText = document.getElementById('poemText');
+    const pageCount = document.getElementById('pageCount');
+
+    poemTitle.innerHTML = poems[index].title;
+    poemText.innerHTML = poems[index].text.join('<br>');
+
+    // Automatically calculate total pages and current page
+    const totalPages = poems.length;
+    const currentPage = index + 1;
+
+    // Display the page info
+    pageCount.innerHTML = `Page ${currentPage} of ${totalPages}`;
+}
 </script>
 
 <style>
@@ -1102,7 +1121,7 @@ function changePoem(direction) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fccabc;
+    background-color: #bdf3f0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
@@ -1223,6 +1242,27 @@ function changePoem(direction) {
     transition: transform 0.2s ease;
     display: block;
   }
+
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: brown; /* color of the thumb (drag handle) */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* optional: color of the track */
+}
+
+/* For Firefox */
+* {
+  scrollbar-color: brown transparent; /* thumb color, track color */
+  scrollbar-width: thin; /* or auto, none */
+}
 </style>
 
 
@@ -1339,6 +1379,32 @@ function changePoem(direction) {
     // Change the line every 5 seconds
     setInterval(advanceLine, 5000);
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
