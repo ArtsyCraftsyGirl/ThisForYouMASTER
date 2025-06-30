@@ -959,20 +959,19 @@ kindly reply to my email.🌻
 <!-- Poem Table -->
 <div id="poemTable" class="poem-table" style="display: none;">
     <div class="table-content">
-   <span class="close" onclick="closePoemTable()" style="position: absolute; top: 2px; right: 15px; color: #aaa; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
-        <h2 id="poemTitle">THE NIGHT, I REMEMBERED WHO LIORA WAS</h2>
-        <h4>Poem written by: Ehllen Quezada</h4>
+        <span class="close" onclick="closePoemTable()" style="position: absolute; top: 2px; right: 15px; color: #aaa; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+       <h2 id="poemTitle" style="color: #f34e1f;">THE NIGHT, I REMEMBERED WHO LIORA WAS</h2>
+<h4 style="color: #f34e1f;">Poem written by: Ehllen Quezada</h4>
 
         <div id="poemText"></div>
         <div class="navigation">
-        <div class="poem-prev" onclick="changePoem(-1)">Previous</div>
-        <div class="poem-next" onclick="changePoem(1)">Next</div>
+            <div class="poem-prev" onclick="changePoem(-1)">Previous</div>
+            <div class="poem-next" onclick="changePoem(1)">Next</div>
         </div>
     </div>
 </div>
 
 <script>
-
 const poems = [
     {
         title: "THE NIGHT, I REMEMBERED WHO LIORA WAS",
@@ -1053,7 +1052,6 @@ const poems = [
             "More and more, I was dazzled by you.",
             "Words unspoken, I wish I could tell you everyday.",
             "You are my unveiled compass, now I'm no longer lost—"
-
         ],
         date: "February 14, 2025"
     }
@@ -1079,16 +1077,23 @@ function showPoem(index) {
 }
 
 function changePoem(direction) {
-    currentPoemIndex += direction; // Update the index based on direction
-    if (currentPoemIndex < 0) {
-        currentPoemIndex = 0; // Prevent going below the first poem
-    } else if (currentPoemIndex >= poems.length) {
-        currentPoemIndex = poems.length - 1; // Prevent going above the last poem
-    }
-    showPoem(currentPoemIndex); // Show the updated poem
+    const poemText = document.getElementById('poemText');
+    const currentPoem = poems[currentPoemIndex];
+
+    // Fade out current poem
+    poemText.classList.add('fade-out');
+
+    setTimeout(() => {
+        currentPoemIndex += direction; // Update the index based on direction
+        if (currentPoemIndex < 0) {
+            currentPoemIndex = 0; // Prevent going below the first poem
+        } else if (currentPoemIndex >= poems.length) {
+            currentPoemIndex = poems.length - 1; // Prevent going above the last poem
+        }
+        showPoem(currentPoemIndex); // Show the updated poem
+        poemText.classList.remove('fade-out'); // Fade in new poem
+    }, 300); // Match this timeout with the CSS transition duration
 }
-
-
 </script>
 
 <style>
@@ -1097,55 +1102,58 @@ function changePoem(direction) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: beige;
+    background-color: #fccabc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     padding: 20px;
-    width: 565px; /* Fixed width */
+    width: 500px; /* Fixed width */
     height: 580px; /* Fixed height */
     overflow-y: auto; /* Enable vertical scrolling */
-   font-size: 14px;
+    font-size: 17px;
+    font-style: bold;
 }
 
 .table-content {
-    text-align: center;
+    text-align: left;
     color: black; /* All text inside will be black */
+    font-family: calibri;
 }
 
 .poem-prev, .poem-next {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: beige;
-  color: black;
-  border: 2px solid black;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  margin: 5px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ae300c;
+    color: black;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect */
 .poem-prev:hover, .poem-next:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Active (click) effect */
 .poem-prev:active, .poem-next:active {
-  transform: scale(0.95);
-  box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
-  transition: none;
+    transform: scale(0.95);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+    transition: none;
 }
 
+/* Fade-out effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 </style>
-
-
-
-
 
 
 
