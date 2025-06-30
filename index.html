@@ -947,7 +947,7 @@ kindly reply to my email.🌻
 </script>
 
 <div class="icon-container">
-    <div class="icon-wrapper"><img src="quiz.png" alt="Quiz Icon" class="quiz" onclick="openQuiz()"></div>
+    <div class="icon-wrapper"><img src="quiz.png" alt="Start Quiz" class="quiz" onclick="showIntroPage()" /></div>
     <div class="icon-wrapper"><img src="cam.png" alt="Photo Icon" class="gallery" onclick="showMessage()"></div>
     <div class="icon-wrapper"><img src="clock.png" alt="Clock Icon" class="clock"></div>
     <div class="icon-wrapper"> <img src="poem.png" alt="Poetry Icon" class="poetry" onclick="openPoemTable()"></div>
@@ -1383,25 +1383,241 @@ function showPoem(index) {
 
 
 
+<!-- Intro Page -->
+<div id="introPage" style="
+  text-align: center;
+  padding: 40px;
+  background-color: #73c0db;
+  color: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  width: 80%;
+  max-width: 420px;
+  position: fixed;
+">
+ <!-- Close Button -->
+<span onclick="document.getElementById('introPage').style.display = 'none'" style="
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+">&times;</span>
+
+
+  <h2>QUIZ: HOW WELL DO YOU KNOW ME?</h2>
+  <h2>Level 1</h2>
+  <div style="margin: 20px 0;">
+    <label for="introName">Enter your name: </label>
+    <input type="text" id="introName" placeholder="enter name & click start" />
+  </div>
+  <div 
+    style="display:inline-block; padding:15px 10px; background-color:#a45438; color:#fff; border-radius:8px; cursor:pointer; font-size:12px;"
+    onclick="startQuiz()">
+    START THE QUIZ
+  </div>
+</div>
+
+
+<!-- Quiz Modal -->
+<div id="quizModal" class="modal" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:1000;">
+  <div class="modal-content" style="margin: 50px auto; background: #73c0db; padding: 20px; border-radius: 10px; width: 600px; max-height: 80%; overflow-y: auto;">
+    <span class="close-button" onclick="closeQuiz()" style="float: right; cursor:pointer; font-size:24px;">×</span>
+    <h2 style="text-align: center;">HOW WELL DO YOU KNOW ME?</h2>
+    <h2 style="text-align: center;">Level 1</h2>
+    
+    <div id="quizQuestions" style="margin-top: 20px;"></div>
+    
+    <div onclick="submitQuiz()" style="margin-top: 20px; display: block; margin-left: auto; margin-right: auto; background-color: #a45438; color: white; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; text-align: center; width: fit-content;">Submit</div>
+  </div>
+</div>
+
+<!-- Result display -->
+
+<div id="quizResult" style="
+  display: none;
+  position: fixed;
+  bottom: 220px; /* moved up a bit */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #80d6d4;
+  color: white;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  z-index: 100;
+  width: 340px;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Segoe UI', sans-serif; color: black;
+">
+  <h3 style="font-size: 22px; margin-bottom: 10px;">🎉 Test Results</h3>
+  <p id="resultText" style="margin-bottom: 20px;"></p>
+
+  <div style="display: flex; justify-content: center; gap: 10px;">
+    <div onclick="closeResult()" style="
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: #888;
+      color: white;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    " onmouseover="this.style.backgroundColor='#aaa'" onmouseout="this.style.backgroundColor='#888'">
+      Close
+    </div>
+
+    <div onclick="resetQuiz()" style="
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: white;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    " onmouseover="this.style.backgroundColor='#e53935'" onmouseout="this.style.backgroundColor='#f44336'">
+      Reset
+    </div>
+  </div>
+</div>
 
 
 
 
+  <h3>Test Results</h3>
+  <p id="resultText"></p>
+  <div onclick="closeResult()" style="cursor:pointer; padding:10px; background-color:#ccc; border-radius:5px; display:inline-block;">Close</div>
+  <div onclick="resetQuiz()" style="cursor:pointer; padding:10px; background-color:#f44336; color:white; border-radius:5px; display:inline-block; margin-left: 10px;">Reset</div>
+</div>
 
+<script>
+  const quizQuestions = [
+    { question: "What are my hobbies?", options: ["Drawing, Singing, Writing", "Dancing & Acting", "All of the above", "Just eating lol"], answer: "Drawing, Singing, Writing" },
+    { question: "What is my favorite movie?", options: ["Titanic", "Twilight", "Harry Potter", "Fifty Shades of Grey"], answer: "Twilight" },
+    { question: "What makes me cry?", options: ["Can be anything it depends on my mood", "Only Onion", "Mother's megaphone voice", "Watching Batang Quiapo"], answer: "Can be anything it depends on my mood" },
+    { question: "Who is my favorite poet?", options: ["Edgar Allan Poe", "Stephanie Meyer", "Sha Nazino", "Jose Rizal"], answer: "Edgar Allan Poe" },
+    { question: "Which animal do I love most?", options: ["Dog", "Cat", "Bird", "Fish"], answer: "Dog" },
+    { question: "What's my favorite food?", options: ["Bitter melon", "Beef stew", "Chicken feet", "Fish stew"], answer: "Beef stew" },
+    { question: "What annoys me?", options: ["Repeating myself", "Mother's rant", "Slow internet/device loading", "Lack of sleep"], answer: "Slow internet/device loading" },
+    { question: "What attracts me the most in a person?", options: ["Physical appearance", "Intelligence", "Humility", "Kindness"], answer: "Intelligence" },
+    { question: "I am really good at?", options: ["Dancing in the C.R", "Eating nonstop", "Hiding feelings", "Socializing"], answer: "Hiding feelings" },
+    { question: "When I'm sad this is what I do?", options: ["I go somewhere with friends", "I am quiet & isolate myself", "I sleep often", "I go to church"], answer: "I am quiet & isolate myself" },
+    { question: "Who's my girl crush/idol?", options: ["Kristen Stewart", "Emma Watson", "Leighton Meester", "Megan Fox"], answer: "Kristen Stewart" },
+    { question: "Who's my idol in singing?", options: ["Regine Velasquez", "Charice Pempengco", "Morisette Amon", "Klarisse De guzman"], answer: "Charice Pempengco" },
+    { question: "What makes me happy most?", options: ["Sleeping", "Watching movies/dramas", "Chatting with someone I like/love", "Money"], answer: "Chatting with someone I like/love" },
+    { question: "People dont know that I have?", options: ["Can't sleep w/o rubbing my feet on a smooth fabric", "I have a Phonophobia", "I am bisexual", "All of the above"], answer: "All of the above" }
+  ];
 
+  function showIntroPage() {
+    const storedResult = localStorage.getItem('quizResult');
+    if (storedResult) {
+      // ✅ Use innerHTML instead of innerText to properly render <strong>, <br>, etc.
+      document.getElementById('resultText').innerHTML = storedResult;
+      document.getElementById('quizResult').style.display = 'block';
+    } else {
+      document.getElementById('introPage').style.display = 'block';
+    }
+  }
 
+  function startQuiz() {
+    const nameInput = document.getElementById('introName').value.trim();
+    window.userName = nameInput || 'Anonymous';
 
+    document.getElementById('introPage').style.display = 'none';
+    document.getElementById('quizModal').style.display = 'block';
+    loadQuizQuestions();
+  }
 
+  function closeQuiz() {
+    document.getElementById('quizModal').style.display = 'none';
+  }
 
+  function loadQuizQuestions() {
+    const container = document.getElementById('quizQuestions');
+    container.innerHTML = '';
 
+    quizQuestions.forEach((q, index) => {
+      const qDiv = document.createElement('div');
+      qDiv.style.marginBottom = '15px';
 
+      const qTitle = document.createElement('div');
+      qTitle.innerHTML = `<strong>Q${index + 1}: ${q.question}</strong>`;
+      qDiv.appendChild(qTitle);
 
+      q.options.forEach(opt => {
+        const label = document.createElement('label');
+        label.style.display = 'block';
+        label.style.marginLeft = '20px';
 
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = `question${index}`;
+        radio.value = opt;
 
+        label.appendChild(radio);
+        label.appendChild(document.createTextNode(` ${opt}`));
+        qDiv.appendChild(label);
+      });
 
+      container.appendChild(qDiv);
+    });
+  }
 
+  function submitQuiz() {
+    const name = window.userName || 'Anonymous';
+    let score = 0;
 
+    // Check if all questions are answered
+    for (let index = 0; index < quizQuestions.length; index++) {
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      if (!selected) {
+        alert("Sorry, please finish all the test.");
+        return;
+      }
+    }
 
+    // Calculate score
+    quizQuestions.forEach((q, index) => {
+      const selected = document.querySelector(`input[name="question${index}"]:checked`);
+      if (selected && selected.value === q.answer) {
+        score++;
+      }
+    });
+
+    // Result logic
+    const passed = score >= 7;
+    const resultStatus = passed ? " PASSED" : " FAILED";
+    const message = passed
+      ? "I’m genuinely touched — you really know me well."
+      : "That was fun! Want to learn more about me and try again?";
+
+    const resultMsg = `
+      <strong>RESULTS: ${resultStatus}</strong><br>
+      Score: ${score}/${quizQuestions.length}<br><br>
+      <strong>${name}</strong>,<br>${message}
+    `;
+
+    document.getElementById('resultText').innerHTML = resultMsg;
+    document.getElementById('quizResult').style.display = 'block';
+
+    localStorage.setItem('quizResult', resultMsg);
+    closeQuiz();
+  }
+
+  function closeResult() {
+    document.getElementById('quizResult').style.display = 'none';
+  }
+
+  function resetQuiz() {
+  alert("Sorry, this needs admin's approval.");
+}
+
+</script>
 
 
 
