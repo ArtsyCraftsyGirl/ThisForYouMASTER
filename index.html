@@ -115,29 +115,34 @@ border: 3px solid red;
    -1px 1px 0 black; /* 1px black stroke */
 }
 
-
-
-
 /* Dropdown container and select */
 .dropdown {
   position: fixed;      /* Fixed to stay visible */
   left: 10px;
   top: 100px;
-  background-color: #333;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
+ background-color: rgb(26, 26, 46); 
+  padding: 5px;
+  border-radius: 3px;
+  color: black;
   z-index: 10;          /* Above other content */
+  width: 200px;         /* Fixed width for the dropdown */
 }
 
 .dropdown select {
-  background-color: #444;
-  color: white;
-  border: 1px solid #666;
+  background-color: silver;
+  color: black;
+  border: 1px solid black;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
+  width: 100%;          /* Make select fill the dropdown width */
+  overflow: hidden;     /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  white-space: nowrap;  /* Prevent text from wrapping */
 }
+
+
+
 
 /* Container for all categories, centers and spaces them */
 .category-images {
@@ -906,3 +911,4 @@ updateCalendarDate();
 
 </body>
 </html>
+
